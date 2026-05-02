@@ -1,62 +1,81 @@
 # Install Guide
 
-Two steps. Total time: ~3 minutes (excluding USDC funding).
+Two steps. ~90 seconds, plus a one-time wallet top-up.
 
 ---
 
-## Step 1 — Install this plugin (auto-installs the BlockRun MCP server)
+## Step 1 — Register the BlockRun MCP server
+
+The slash commands in this bundle call `mcp__blockrun__blockrun_image`,
+`_video`, and `_wallet`. Those tools come from the [BlockRun MCP server](https://github.com/BlockRunAI/blockrun-mcp),
+not from this plugin. Register it once with Claude Code:
 
 ```bash
-git clone https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun \
+claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest
+```
+
+What this does:
+
+- Writes `blockrun` into your user-level `~/.claude/mcp.json` (so it's
+  available in every CC session, every project).
+- On first launch CC runs `npx -y @blockrun/mcp@latest`, which fetches
+  the latest BlockRun MCP server and starts it on stdio.
+
+Verify it's wired up:
+
+```bash
+claude mcp list
+# expect: blockrun ✓ Connected
+```
+
+> **Already registered?** `claude mcp add` is idempotent — re-running
+> it does no harm. If you have an older BlockRun setup using a
+> different command, run `claude mcp remove blockrun` first, then the
+> command above.
+
+> **Why not auto-install via `.mcp.json` in this repo?** The plugin
+> ships a `.mcp.json` for environments that read it from a plugin
+> directory (some marketplace install paths do). For the canonical
+> `git clone` install path it's not guaranteed to be picked up — so
+> the explicit `claude mcp add` above is the reliable, one-line method.
+
+---
+
+## Step 2 — Install this skill bundle
+
+```bash
+git clone https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun \
   ~/.claude/plugins/cc-gpt-image2-seedance-blockrun
 ```
 
-Restart Claude Code. The plugin's `.mcp.json` declares one MCP server:
+Restart Claude Code. The bundle adds `/headshot`, `/dance`, and
+`/poster` as user-invocable skills.
 
-```json
-{
-  "blockrun": {
-    "command": "npx",
-    "args": ["-y", "@blockrun/mcp@latest"]
-  }
-}
-```
-
-Claude Code reads this on plugin load, runs `npx -y @blockrun/mcp@latest`,
-and registers `mcp__blockrun__blockrun_image`, `_video`, and `_wallet`
-automatically.
-
-> **Already have the standalone BlockRun MCP plugin installed?** Then the
-> `blockrun` MCP server is already registered. CC will use the existing
-> one and ignore the duplicate registration — there's no conflict.
-
-Verify in Claude Code:
+Verify:
 
 ```
-> what blockrun tools do I have?
+> /help
 ```
 
-You should see `blockrun_image`, `blockrun_video`, `blockrun_wallet`
-(plus any other tools the BlockRun MCP exposes — chat, search, wallet,
-markets, etc.).
+You should see `headshot`, `dance`, and `poster` listed.
 
 ---
 
-## Step 2 — Fund your BlockRun wallet (Base USDC)
+## Step 3 — Fund your BlockRun wallet (Base USDC)
 
-The MCP plugin auto-creates a wallet at `~/.blockrun/.session` on first
-use (owner-readable only — the private key never leaves your machine).
-To top it up:
+The BlockRun MCP auto-creates a wallet at `~/.blockrun/.session` on
+first use (owner-readable only — the private key never leaves your
+machine). To top it up, in Claude Code:
 
 ```
 > top up my blockrun wallet
 ```
 
-Claude calls `mcp__blockrun__blockrun_wallet` with `action: setup`, which
-returns a QR code and a Base mainnet address.
+Claude calls `mcp__blockrun__blockrun_wallet` with `action: setup`,
+which returns a QR code and a Base mainnet address.
 
-Send **at least $1 USDC on Base** to that address (recommended $5–$20 for
-casual use). The USDC contract on Base is
+Send **at least $1 USDC on Base** to that address (recommended $5–$20
+for casual use). USDC contract on Base:
 `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`.
 
 Common sources:
@@ -81,9 +100,9 @@ In any project directory:
 > /headshot ./me.jpg
 ```
 
-(Replace `./me.jpg` with the path to a real photo of yourself.)
+(Replace `./me.jpg` with a real photo path.)
 
-After ~10 seconds you should get back:
+After ~10 seconds you should see:
 
 ```
 ✅ Headshot ready
@@ -98,8 +117,7 @@ After ~10 seconds you should get back:
 
 ## Optional — `ffmpeg` for `/dance` GIF rendering
 
-`/dance` produces an mp4 by default. If you want a shareable looping GIF
-preview, install ffmpeg:
+`/dance` produces an mp4 by default. For a shareable looping GIF:
 
 ```bash
 # macOS
@@ -109,14 +127,14 @@ brew install ffmpeg
 sudo apt-get install ffmpeg
 ```
 
-The skill auto-detects ffmpeg's presence and skips the GIF if it's missing.
+The skill auto-detects ffmpeg and skips the GIF if it's missing.
 
 ---
 
 ## Optional — pin output to a different directory
 
-By default, command output lands in `./blockrun-out/{ts}-{cmd}/` in the
-current working directory. To override globally:
+By default, output lands in `./blockrun-out/{ts}-{cmd}/` in CWD. To
+override:
 
 ```bash
 export BLOCKRUN_OUT_DIR=~/Downloads/blockrun-output
@@ -126,51 +144,18 @@ Add to `~/.zshrc` or `~/.bashrc` to persist.
 
 ---
 
-## Alternative install paths
-
-### A) Skill-only install (if you already have BlockRun MCP and don't want this plugin to manage it)
-
-```bash
-git clone https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun \
-  ~/.claude/skills/cc-gpt-image2-seedance-blockrun
-```
-
-`~/.claude/skills/` does **not** read `.mcp.json`, so no auto-install.
-You'll need to have the BlockRun MCP plugin from `blockrunai/blockrun`
-installed separately. Use this path if you want minimal coupling.
-
-### B) Marketplace one-click (planned for v1.1)
-
-Once published to the BlockRun marketplace:
-
-```
-> /plugin marketplace install blockrunai/cc-gpt-image2-seedance-blockrun
-```
-
-That's the cleanest path for non-technical users. We'll update this README
-when it lands.
-
-### C) Manual MCP-add (if `.mcp.json` doesn't auto-register on your CC version)
-
-```bash
-claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest
-```
-
-Then `git clone` this repo into `~/.claude/skills/` (Path A).
-
----
-
 ## Troubleshooting
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| "BlockRun MCP not found" | CC didn't read `.mcp.json` | Confirm the repo is in `~/.claude/plugins/` (not `skills/`) and restart CC |
-| "Skill not recognized: /headshot" | Plugin not loaded | Check `~/.claude/plugins/cc-gpt-image2-seedance-blockrun/skills/headshot/SKILL.md` exists, restart CC |
-| "No wallet found" | First-run race | Run `blockrun_wallet action: status` once to bootstrap |
-| "Payment failed: balance too low" | Wallet has < required amount | Top up via `blockrun_wallet action: setup` |
-| "Image input unreachable" (in `/dance`) | Local file vs URL mismatch | The skill auto-falls-back via `blockrun_image` upload — make sure your wallet has an extra ~$0.06 |
+| `Skill not recognized: /headshot` | Plugin not loaded — repo is in the wrong directory or CC wasn't restarted | Confirm `~/.claude/plugins/cc-gpt-image2-seedance-blockrun/skills/headshot/SKILL.md` exists, then restart CC |
+| `mcp__blockrun__blockrun_wallet not available` (or any `mcp__blockrun__*` tool missing) | Step 1 wasn't run, or the MCP server failed to start | Run `claude mcp list` — if `blockrun` is missing or shows ✗, re-run Step 1's `claude mcp add` command. Check `npx -y @blockrun/mcp@latest` works manually. |
+| `claude mcp add blockrun` errors with "command not found: claude" | Claude Code CLI not in PATH | Open a CC session and ask "where is the claude CLI installed?" — typically `~/.claude/local/claude` or a Homebrew path |
+| `npx ENOTFOUND` on first run | First-time package fetch is offline-blocked | Run `npx -y @blockrun/mcp@latest --help` once with internet to prime the cache |
+| `No wallet found` | First-run race | Run `blockrun_wallet action: status` once to bootstrap |
+| `Payment failed: balance too low` | Wallet has < required amount | Top up via `blockrun_wallet action: setup` |
+| `Image input unreachable` (in `/dance`) | Local file vs URL mismatch | The skill auto-falls-back via `blockrun_image` upload — make sure your wallet has an extra ~$0.06 |
 | Generated GIF missing | `ffmpeg` not installed | Optional ffmpeg step above |
-| Two `blockrun` MCP servers complain | You installed both this plugin and the standalone BlockRun MCP plugin | Keep only one — easiest is uninstalling the standalone one and letting this plugin manage it |
 
 ---
 
@@ -182,5 +167,5 @@ Then `git clone` this repo into `~/.claude/skills/` (Path A).
 - Photos you pass to `/headshot` and `/dance` are uploaded to BlockRun's
   CDN as part of the request. Output URLs are permanent BlockRun-hosted
   links — keep your own copies via the local files in `blockrun-out/`.
-- BlockRun does not store your prompts beyond what's needed to fulfill the
-  request. See [blockrun.ai/privacy](https://blockrun.ai/privacy).
+- BlockRun does not store your prompts beyond what's needed to fulfill
+  the request. See [blockrun.ai/privacy](https://blockrun.ai/privacy).

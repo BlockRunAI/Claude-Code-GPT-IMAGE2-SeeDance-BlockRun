@@ -49,6 +49,25 @@ If the user says "make a dance video" without a photo, ask for the photo path.
 
 ## Workflow (Claude executes strictly in order)
 
+### Step 0 — Verify the BlockRun MCP server is registered
+
+Before any tool call, confirm `mcp__blockrun__blockrun_video` and
+`mcp__blockrun__blockrun_wallet` are available. If not, surface this
+exact message and stop:
+
+> "The BlockRun MCP server isn't registered with Claude Code yet, so
+> `/dance` can't run. Please run **once**:
+>
+> ```
+> claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest
+> ```
+>
+> Then restart Claude Code and try `/dance` again. (Full install
+> guide: `INSTALL.md` in the cc-gpt-image2-seedance-blockrun bundle.)"
+
+Do not proceed to the wallet preflight or video call if the MCP tools
+are missing.
+
 ### Step 1 — Wallet preflight
 
 Call `mcp__blockrun__blockrun_wallet` with `{"action": "status"}`.

@@ -48,6 +48,26 @@ for the photo path before proceeding.
 
 ## Workflow (Claude executes this strictly in order)
 
+### Step 0 — Verify the BlockRun MCP server is registered
+
+Before any tool call, confirm `mcp__blockrun__blockrun_wallet` is
+available. If it is not (the user has not registered the MCP server
+yet), the entire skill cannot run — surface a clear install message
+and stop:
+
+> "The BlockRun MCP server isn't registered with Claude Code yet, so
+> `/headshot` can't run. Please run **once**:
+>
+> ```
+> claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest
+> ```
+>
+> Then restart Claude Code and try `/headshot` again. (Full install
+> guide: `INSTALL.md` in the cc-gpt-image2-seedance-blockrun bundle.)"
+
+Do not attempt the wallet preflight or the image call if the MCP tools
+are missing.
+
 ### Step 1 — Wallet preflight
 
 Call `mcp__blockrun__blockrun_wallet` with `{"action": "status"}`.

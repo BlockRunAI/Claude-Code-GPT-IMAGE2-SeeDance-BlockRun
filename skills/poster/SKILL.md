@@ -54,6 +54,25 @@ the traditional one-sheet `1024x1792`. Add `--square` for `1024x1024`
 
 ## Workflow (Claude executes strictly in order)
 
+### Step 0 — Verify the BlockRun MCP server is registered
+
+Before any tool call, confirm `mcp__blockrun__blockrun_image` and
+`mcp__blockrun__blockrun_wallet` are available. If not, surface this
+exact message and stop:
+
+> "The BlockRun MCP server isn't registered with Claude Code yet, so
+> `/poster` can't run. Please run **once**:
+>
+> ```
+> claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest
+> ```
+>
+> Then restart Claude Code and try `/poster` again. (Full install
+> guide: `INSTALL.md` in the cc-gpt-image2-seedance-blockrun bundle.)"
+
+Do not proceed to the wallet preflight or image call if the MCP tools
+are missing.
+
 ### Step 1 — Wallet preflight
 
 Call `mcp__blockrun__blockrun_wallet` with `{"action": "status"}`.

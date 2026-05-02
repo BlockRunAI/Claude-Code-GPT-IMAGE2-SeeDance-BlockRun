@@ -1,4 +1,5 @@
 {
+  "_comment": "Best-effort auto-register of the BlockRun MCP server for environments that read this file from a plugin directory. Canonical path is: `claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest`. See INSTALL.md.",
   "blockrun": {
     "command": "npx",
     "args": ["-y", "@blockrun/mcp@latest"]

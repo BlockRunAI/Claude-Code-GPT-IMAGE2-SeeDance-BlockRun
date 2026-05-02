@@ -7,8 +7,11 @@ This one **runs them for you** — directly from Claude Code, with output
 that drops into your project folder, billed by the call (no subscription).
 
 ```bash
-# One-step install — installs the BlockRun MCP server automatically
-git clone https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun \
+# Step 1 — register the BlockRun MCP server (one time, all CC sessions)
+claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest
+
+# Step 2 — install this skill bundle
+git clone https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun \
   ~/.claude/plugins/cc-gpt-image2-seedance-blockrun
 ```
 
@@ -63,9 +66,10 @@ upload, and pay through some subscription you never wanted.
 
 This bundle turns them into **executable Claude Code commands**:
 
-- **What you install:** this plugin. It includes a `.mcp.json` that
-  auto-launches the [BlockRun MCP server](https://github.com/BlockRunAI/blockrun-mcp)
-  via `npx @blockrun/mcp@latest` — so you don't install two things, you install one.
+- **What you install:** the [BlockRun MCP server](https://github.com/BlockRunAI/blockrun-mcp)
+  (one `claude mcp add` command — it runs as `npx @blockrun/mcp@latest`)
+  plus this plugin (a `git clone` into `~/.claude/plugins/`). Two
+  steps, ~90 seconds.
 - **What it does:** thin, polished slash commands that pick the right
   model, build a vetted prompt template, call the right MCP tool, and
   drop a file in your project directory. Three commands at v1, more coming.
@@ -76,17 +80,17 @@ This bundle turns them into **executable Claude Code commands**:
 ```
 You type   /headshot ./me.jpg --style startup
             ↓
-[this plugin]  picks template + variables, calls
+[this plugin]   picks template + variables, calls
             ↓
-mcp__blockrun__blockrun_image    ← auto-installed by this plugin's .mcp.json
+mcp__blockrun__blockrun_image    ← from `@blockrun/mcp` (registered via claude mcp add)
             ↓
 BlockRun gateway · x402 USDC settle · OpenAI gpt-image-2
             ↓
 You get   ./blockrun-out/2026-05-01T143200Z-headshot/headshot.png
 ```
 
-> Already have BlockRun MCP installed separately? It's the same server —
-> CC will just use the one already registered. No conflict, no duplicate.
+> Already have BlockRun MCP registered? Skip Step 1 — `claude mcp add`
+> is idempotent at the same name and a re-add is harmless.
 
 ---
 
