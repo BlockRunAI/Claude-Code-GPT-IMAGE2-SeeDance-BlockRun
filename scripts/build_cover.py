@@ -31,7 +31,7 @@ import urllib.request
 from pathlib import Path
 
 try:
-    from PIL import Image, ImageOps  # noqa: F401
+    from PIL import Image, ImageOps, ImageDraw, ImageFont, ImageFilter  # noqa: F401
 except ImportError:
     print("ERROR: Pillow not installed. Run: pip install Pillow", file=sys.stderr)
     sys.exit(2)
@@ -164,6 +164,131 @@ def download_all(urls: list[str], cache_dir: Path, workers: int = 16) -> dict[st
     return results
 
 
+def _find_font(candidates: list[str], size: int) -> ImageFont.FreeTypeFont:
+    """Try the candidate font paths in order; fall back to PIL default."""
+    for path in candidates:
+        if Path(path).exists():
+            try:
+                return ImageFont.truetype(path, size)
+            except Exception:  # noqa: BLE001
+                continue
+    return ImageFont.load_default()
+
+
+BOLD_FONTS = [
+    # macOS
+    "/System/Library/Fonts/Helvetica.ttc",
+    "/System/Library/Fonts/HelveticaNeue.ttc",
+    "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+    "/Library/Fonts/Arial Bold.ttf",
+    # Linux (common Ubuntu/Debian)
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+    "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf",
+]
+REG_FONTS = [
+    "/System/Library/Fonts/Helvetica.ttc",
+    "/System/Library/Fonts/HelveticaNeue.ttc",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    "/usr/share/fonts/truetype/freefont/FreeSans.ttf",
+]
+
+
+def _measure(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont) -> tuple[int, int]:
+    bb = draw.textbbox((0, 0), text, font=font)
+    return bb[2] - bb[0], bb[3] - bb[1]
+
+
+def _fit_font(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    font_paths: list[str],
+    sizes: list[int],
+    max_width: int,
+) -> tuple[ImageFont.FreeTypeFont, int, int]:
+    """Pick the largest size from `sizes` whose rendered width fits max_width.
+    Falls back to the smallest if none fit."""
+    last = None
+    for s in sizes:
+        font = _find_font(font_paths, s)
+        w, h = _measure(draw, text, font)
+        last = (font, w, h)
+        if w <= max_width:
+            return font, w, h
+    return last  # type: ignore[return-value]
+
+
+def add_brand_overlay(
+    canvas: Image.Image,
+    brand: str,
+    tagline: str,
+) -> Image.Image:
+    """Composite a centered dark rounded panel with brand title + tagline
+    over the mosaic. Designed so a screenshot of any region of the cover
+    still includes the brand name."""
+    W, H = canvas.size
+
+    # Apply a subtle global darken so text contrast holds even on light tiles.
+    darken = Image.new("RGBA", (W, H), (0, 0, 0, 35))
+    base = Image.alpha_composite(canvas.convert("RGBA"), darken)
+
+    overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+
+    # Pick font sizes that scale with canvas height
+    title_sizes = [int(H * f) for f in (0.16, 0.13, 0.11, 0.09, 0.075, 0.06)]
+    sub_sizes = [int(H * f) for f in (0.06, 0.05, 0.04, 0.035, 0.03)]
+
+    title_font, tw, th = _fit_font(draw, brand, BOLD_FONTS, title_sizes, int(W * 0.78))
+    sub_font, sw, sh = _fit_font(draw, tagline, REG_FONTS, sub_sizes, int(W * 0.85))
+
+    gap = int(H * 0.02)
+    pad_x = int(W * 0.04)
+    pad_y = int(H * 0.05)
+
+    block_w = max(tw, sw) + 2 * pad_x
+    block_h = th + sh + gap + 2 * pad_y
+
+    cx = W // 2
+    cy = H // 2
+    rect_left = cx - block_w // 2
+    rect_top = cy - block_h // 2
+    rect_right = cx + block_w // 2
+    rect_bottom = cy + block_h // 2
+
+    # Soft drop shadow for the panel
+    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sdraw = ImageDraw.Draw(shadow)
+    sdraw.rounded_rectangle(
+        (rect_left + 6, rect_top + 8, rect_right + 6, rect_bottom + 8),
+        radius=int(min(W, H) * 0.025),
+        fill=(0, 0, 0, 180),
+    )
+    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=12))
+
+    # Foreground panel — semi-opaque dark, lets some mosaic show through
+    panel = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    pdraw = ImageDraw.Draw(panel)
+    pdraw.rounded_rectangle(
+        (rect_left, rect_top, rect_right, rect_bottom),
+        radius=int(min(W, H) * 0.025),
+        fill=(15, 15, 18, 215),
+    )
+
+    # Draw title + tagline
+    title_x = cx - tw // 2
+    title_y = rect_top + pad_y
+    sub_x = cx - sw // 2
+    sub_y = title_y + th + gap
+    pdraw.text((title_x, title_y), brand, font=title_font, fill=(255, 255, 255, 255))
+    pdraw.text((sub_x, sub_y), tagline, font=sub_font, fill=(220, 220, 220, 255))
+
+    composed = Image.alpha_composite(base, shadow)
+    composed = Image.alpha_composite(composed, panel)
+    return composed.convert("RGB")
+
+
 def build_mosaic(
     urls: list[str],
     cache: dict[str, Path],
@@ -233,6 +358,16 @@ def main() -> int:
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--quality", type=int, default=82)
     p.add_argument("--workers", type=int, default=16)
+    p.add_argument(
+        "--brand",
+        default="CC-GPT-IMAGE2-SeeDance-BlockRun",
+        help="Title overlaid on the cover. Pass empty string to skip overlay.",
+    )
+    p.add_argument(
+        "--tagline",
+        default="1,010 cases  ·  /headshot  /dance  /poster  ·  pay per image · USDC on Base",
+        help="Subtitle overlaid below the brand.",
+    )
     args = p.parse_args()
 
     case_root = Path(args.case_root).resolve()
@@ -274,6 +409,11 @@ def main() -> int:
     mosaic = build_mosaic(
         download_pool, cache, args.cols, args.rows, args.cell, args.shuffle, args.seed
     )
+
+    if args.brand:
+        print()
+        print(f"==> overlaying brand: {args.brand!r}")
+        mosaic = add_brand_overlay(mosaic, args.brand, args.tagline)
 
     print()
     print("==> saving")
