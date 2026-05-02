@@ -1,6 +1,22 @@
-# cc-gpt-image2-seedance-blockrun
+<p align="center">
+  <a href="prompts/case-library/INDEX.md"><img src="examples/cover.jpg" alt="cc-gpt-image2-seedance-blockrun cover — 360 real outputs from the bundled case library (1,010 prompts curated from awesome-gpt-image-2-prompts, awesome-gpt-image-2, and awesome-seedance-2-guide)" width="100%"/></a>
+</p>
 
-> **Run any awesome-gpt-image-2 or Seedance prompt as a one-line Claude Code command. Pay per image with x402 USDC on Base.**
+<h1 align="center">cc-gpt-image2-seedance-blockrun</h1>
+
+<p align="center">
+  <b>Run any awesome-gpt-image-2 or Seedance prompt as a one-line Claude Code command.</b><br/>
+  <code>/headshot</code> · <code>/dance</code> · <code>/poster</code> · 1,010 cases · pay-per-image USDC on Base via <a href="https://blockrun.ai">BlockRun</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun/stargazers"><img src="https://img.shields.io/github/stars/BlockRunAI/cc-gpt-image2-seedance-blockrun?style=for-the-badge&logo=github&color=181717" alt="GitHub stars"/></a>
+  <img src="https://img.shields.io/badge/Claude_Code-Skill-D97757?style=for-the-badge&logo=anthropic" alt="Claude Code Skill"/>
+  <img src="https://img.shields.io/badge/payment-x402_USDC_on_Base-0052FF?style=for-the-badge&logo=ethereum" alt="x402 USDC on Base"/>
+  <img src="https://img.shields.io/badge/license-MIT-1F8B4C?style=for-the-badge" alt="MIT License"/>
+</p>
+
+---
 
 Other awesome lists tell you what prompt to copy-paste.
 This one **runs them for you** — directly from Claude Code, with output
