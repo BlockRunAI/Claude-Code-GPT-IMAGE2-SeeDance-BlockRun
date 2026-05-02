@@ -7,16 +7,14 @@ This one **runs them for you** — directly from Claude Code, with output
 that drops into your project folder, billed by the call (no subscription).
 
 ```bash
-# Step 1 — register the BlockRun MCP server (one time, all CC sessions)
-claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest
-
-# Step 2 — install this skill bundle
-git clone https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun \
-  ~/.claude/plugins/cc-gpt-image2-seedance-blockrun
+# One-line install (registers MCP + clones bundle + symlinks /headshot, /dance, /poster)
+curl -fsSL https://raw.githubusercontent.com/BlockRunAI/cc-gpt-image2-seedance-blockrun/main/install.sh | bash
 ```
 
-Then restart Claude Code, fund your BlockRun wallet on first run
-([INSTALL.md](INSTALL.md) walks you through it in 60 seconds), and:
+> Prefer not to pipe to bash? Manual two-step lives in [INSTALL.md](INSTALL.md).
+
+Restart Claude Code, fund your BlockRun wallet on first run
+(`> top up my blockrun wallet` — takes ~60 seconds), and:
 
 ```
 > /headshot ./me.jpg

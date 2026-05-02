@@ -30,9 +30,9 @@ are restyled.
 
 ## What this skill does
 
-Reads the user's input photo, picks a style from `prompts/headshot.md`,
-calls `mcp__blockrun__blockrun_image` with `action="edit"` and
-`model="openai/gpt-image-2"`, then downloads the result to
+Reads the user's input photo, picks a style from the **Style variants**
+section below, calls `mcp__blockrun__blockrun_image` with `action="edit"`
+and `model="openai/gpt-image-2"`, then downloads the result to
 `./blockrun-out/{ts}-headshot/headshot.png`.
 
 ## Inputs
@@ -86,9 +86,10 @@ Call `mcp__blockrun__blockrun_wallet` with `{"action": "status"}`.
 
 ### Step 2 — Prepare prompt
 
-Read `prompts/headshot.md` from this skill bundle. Pick the block matching
-`{style}`. Substitute its `{background}`, `{lighting}`, `{wardrobe}` slots
-into the master template.
+Use the master template from the **Style variants** section at the
+bottom of this file. Pick the block matching `{style}` (default
+`corporate`) and substitute its `{background}`, `{lighting}`, `{wardrobe}`
+slots into the master template.
 
 ### Step 3 — Prepare the input image
 
@@ -155,7 +156,7 @@ For `--all`, list all four files and note total cost ~$0.48.
 | Error pattern | Action |
 |---|---|
 | Tool `isError: true` with text containing `payment` or `balance` | Show: "Wallet balance too low. Run `blockrun_wallet action: setup` to top up." Do NOT retry. |
-| Text contains `content filter` or `safety` or `invalid request` | Apply the "Looks like a different person" or relevant retry-addendum from `prompts/headshot.md` and retry once. If it fails again, tell the user the source photo may have triggered a filter. |
+| Text contains `content filter` or `safety` or `invalid request` | Apply the "Looks like a different person" retry addendum from the **Common pitfalls + auto-retry templates** section below and retry once. If it fails again, tell the user the source photo may have triggered a filter. |
 | Network timeout / `fetch failed` | Retry once after 5s. If still failing, surface the error verbatim. |
 | `No wallet found` | Walk through `blockrun_wallet action: setup`, then retry. |
 
@@ -173,4 +174,115 @@ For `--all`, list all four files and note total cost ~$0.48.
 /headshot ./me.jpg --style actor
 /headshot ./me.jpg --all
 /headshot https://example.com/photo.jpg --style linkedin-2025
+```
+
+---
+
+## Master template
+
+> Used by Step 2 above. Default `{style}` is `corporate` if the user
+> doesn't say. Default `{wardrobe}` is derived from style.
+
+```
+Transform the person in this image into a professional headshot.
+
+Maintain facial features, skin tone, hair color, and identity exactly as in
+the source image — only restyle environment, lighting, and wardrobe.
+
+Background: {background}
+Lighting: {lighting}
+Wardrobe: {wardrobe}
+Composition: head-and-shoulders crop, eyes at upper third, slight three-quarter
+turn, looking just past camera, gentle natural smile.
+
+Render at high resolution with sharp focus on the eyes, soft skin retouching
+that preserves pores and natural texture (do NOT smooth into plastic),
+neutral white balance, suitable for LinkedIn or a corporate website.
+
+Do not add text, watermarks, logos, or borders. Do not change the person's
+ethnicity, age, gender, or facial structure.
+```
+
+## Style variants
+
+Pick one of these by `--style` (or ask the user if unset).
+
+### `corporate` (default — investment-bank / consulting / law-firm vibe)
+
+```
+{background}: smooth charcoal-to-graphite gradient, soft vignette
+{lighting}: butterfly key with subtle fill, hint of rim light from camera-left
+{wardrobe}: tailored navy suit jacket, crisp white shirt, no tie OR a single
+            understated dark tie; minimalist accessories only
+```
+
+### `creative` (designer / writer / agency creative director)
+
+```
+{background}: warm neutral wall (oat / clay / sage), shallow depth of field
+{lighting}: soft window light from camera-left, golden-hour warmth
+{wardrobe}: well-fitted casual blazer over a fine-knit crewneck OR a
+            high-quality oversized denim shirt; one tasteful watch or ring
+```
+
+### `startup` (founder / engineer / PM — modern tech aesthetic)
+
+```
+{background}: out-of-focus modern workspace (concrete + warm wood tones) OR
+              clean off-white seamless paper
+{lighting}: bright diffused daylight, slight cool tone, no harsh shadows
+{wardrobe}: high-quality plain crew tee in navy / charcoal / cream, OR a
+            zip-up technical sweater; no logos
+```
+
+### `actor` (headshot for casting / talent agencies)
+
+```
+{background}: solid neutral grey or muted teal seamless paper
+{lighting}: clamshell lighting (large soft key + reflector fill), eyes catch
+            two clear specular highlights
+{wardrobe}: solid-color simple top in a hue that complements skin tone, no
+            patterns, no jewelry, no collar that distracts from face
+```
+
+### `linkedin-2025` (the "I just got promoted" vibe — slightly aspirational)
+
+```
+{background}: slightly out-of-focus modern office or warm-tone neutral wall
+{lighting}: warm Rembrandt-style key with soft fill, faint rim from behind
+{wardrobe}: structured blazer over a knit tee OR a polished button-down with
+            top button open; sleeves clean, posture confident-but-relaxed
+```
+
+## Common pitfalls + auto-retry templates
+
+If the first response shows any of these, retry with the matching addendum
+appended to the prompt.
+
+### "Looks like a different person"
+
+Append:
+```
+CRITICAL: this is an image-to-image edit, NOT a re-imagining. Preserve the
+exact facial geometry of the source: eye spacing, nose bridge, jawline,
+hairline, and skin tone must match the source 1:1. Treat this as a
+"clothing + lighting + background" swap only.
+```
+
+### "Too plastic / over-retouched"
+
+Append:
+```
+Skin must show natural texture: pores, faint stubble or peach fuzz where
+applicable, soft tonal variation. Avoid the "AI plastic" smoothness — aim
+for the polish of a Hasselblad medium-format portrait, not a beauty filter.
+```
+
+### "Wrong wardrobe / colors clashing"
+
+Append:
+```
+Wardrobe color must complement the source's skin undertone. If the source
+appears to be {warm/cool/neutral}-toned, choose {complementary palette}.
+Avoid pure black and pure white if they fight the skin tone.
 ```
