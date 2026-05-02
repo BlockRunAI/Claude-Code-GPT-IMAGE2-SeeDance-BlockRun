@@ -2,42 +2,42 @@
 
 Curated from the three source repos. Each case is one markdown file with a normalized frontmatter (title, source, credit, workflow, model, tags). Use this index to find prompt templates to adapt for v1.1+ commands.
 
-**Total cases:** 723
+**Total cases:** 848
 
 
 ## By workflow
 
-- **image2image** — 322 cases
-- **image2video** — 27 cases
-- **text2image** — 268 cases
-- **text2video** — 106 cases
+- **image2image** — 328 cases
+- **image2video** — 34 cases
+- **text2image** — 259 cases
+- **text2video** — 227 cases
 
 ## By tag (likely command match)
 
-- **ad-series** — 421 cases
-- **ui-system** — 353 cases
-- **poster** — 231 cases
-- **unbox** — 118 cases
-- **headshot** — 118 cases
-- **lookbook** — 107 cases
-- **minimalist** — 91 cases
-- **anime** — 82 cases
-- **logo-3d** — 76 cases
-- **infographic** — 67 cases
-- **card-deck** — 58 cases
-- **fantasy** — 37 cases
-- **sci-fi** — 33 cases
-- **food** — 27 cases
-- **dance** — 20 cases
+- **ad-series** — 520 cases
+- **ui-system** — 438 cases
+- **poster** — 260 cases
+- **unbox** — 145 cases
+- **lookbook** — 127 cases
+- **headshot** — 121 cases
+- **minimalist** — 104 cases
+- **anime** — 92 cases
+- **logo-3d** — 81 cases
+- **infographic** — 69 cases
+- **card-deck** — 62 cases
+- **fantasy** — 48 cases
+- **sci-fi** — 41 cases
+- **dance** — 38 cases
+- **food** — 34 cases
 - **character-sheet** — 19 cases
-- **kpop** — 16 cases
+- **kpop** — 17 cases
 - **isometric** — 6 cases
-- **ghibli** — 1 cases
+- **ghibli** — 2 cases
 
 ## By source repo
 
 
-### `awesome-gpt-image-2` (351 cases)
+### `awesome-gpt-image-2` (352 cases)
 
 - [4️⃣ 底部总结](from-awesome-gpt-image-2/4.md) — image2image · openai/gpt-image-2 [logo-3d]
 - [人物与角色](from-awesome-gpt-image-2/untitled.md) — image2image · openai/gpt-image-2 [character-sheet]
@@ -321,6 +321,7 @@ Curated from the three source repos. Each case is one markdown file with a norma
 - [例 371：Scrapbook 真人图与迷你分身](from-awesome-gpt-image-2/371-scrapbook.md) — image2image · openai/gpt-image-2 [lookbook, ad-series]
 - [例 372：可爱角色设定表](from-awesome-gpt-image-2/372.md) — text2video · bytedance/seedance-2.0-fast [headshot, poster, character-sheet, ui-system, lookbook, ad-series]
 - [例 373：高端肉类海鲜品牌英雄图](from-awesome-gpt-image-2/373.md) — image2image · openai/gpt-image-2 [ad-series]
+- [例 374：彩色潦草小狗线条风格重绘](from-awesome-gpt-image-2/374.md) — image2image · openai/gpt-image-2 
 - [例 37：综合应用场景图](from-awesome-gpt-image-2/37.md) — image2image · openai/gpt-image-2 [ui-system, ad-series]
 - [例 3：足球主题电影海报](from-awesome-gpt-image-2/3.md) — image2image · openai/gpt-image-2 [poster]
 - [例 41：插画艺术风格创作](from-awesome-gpt-image-2/41.md) — image2image · openai/gpt-image-2 [headshot, ui-system, ad-series, logo-3d, anime]
@@ -391,7 +392,7 @@ Curated from the three source repos. Each case is one markdown file with a norma
 - [🖼️ 魔法画廊 (Part 2)](from-awesome-gpt-image-2/part-2.md) — image2image · openai/gpt-image-2 [card-deck, fantasy]
 - [🧩 工业级提示词模板与防坑指南](from-awesome-gpt-image-2/untitled.md) — image2image · openai/gpt-image-2 [ui-system, minimalist]
 
-### `awesome-gpt-image-2-prompts` (309 cases)
+### `awesome-gpt-image-2-prompts` (300 cases)
 
 - [Case 100: [Cyberpunk 404 Witch Summoning](https://x.com/Eris_Create_Lab/status/2047537707904274795) (by [@Eris_Create_La](from-awesome-gpt-image-2-prompts/case-100-cyberpunk-404-witch-summoning-https-x-com-eris-create-lab-status-2047537707904274795-by-eris-create-la.md) — text2image · openai/gpt-image-2 [poster, ui-system, lookbook, ad-series, anime, sci-fi, fantasy]
 - [Case 100: [Japanese Classroom Long Hair Snapshot](https://x.com/Hair_Hair55/status/2047963832732221723) (by [@Hair_Hair5](from-awesome-gpt-image-2-prompts/case-100-japanese-classroom-long-hair-snapshot-https-x-com-hair-hair55-status-2047963832732221723-by-hair-hair5.md) — text2image · openai/gpt-image-2 [ad-series]
@@ -685,16 +686,7 @@ Curated from the three source repos. Each case is one markdown file with a norma
 - [Case 9: [Style-to-UI Design System](https://x.com/stark_nico99/status/2045836554451706125) (by [@stark_nico99](https://x](from-awesome-gpt-image-2-prompts/case-9-style-to-ui-design-system-https-x-com-stark-nico99-status-2045836554451706125-by-stark-nico99-https-x.md) — text2image · openai/gpt-image-2 [ui-system]
 - [Case 9: [Super Famicom Poster Style](https://x.com/lilimliliychan/status/2045114760937804187) (by [@lilimliliychan](http](from-awesome-gpt-image-2-prompts/case-9-super-famicom-poster-style-https-x-com-lilimliliychan-status-2045114760937804187-by-lilimliliychan-http.md) — text2image · openai/gpt-image-2 [poster]
 - [Case 9: [Urban Turn-Back Street Portrait](https://x.com/Tz_2022/status/2045892003775361198) (by [@Tz_2022](https://x.com](from-awesome-gpt-image-2-prompts/case-9-urban-turn-back-street-portrait-https-x-com-tz-2022-status-2045892003775361198-by-tz-2022-https-x-com.md) — text2video · bytedance/seedance-2.0-fast [headshot, lookbook]
-- [Einfuehrung](from-awesome-gpt-image-2-prompts/einfuehrung.md) — text2image · openai/gpt-image-2 
-- [Giris](from-awesome-gpt-image-2-prompts/giris.md) — text2image · openai/gpt-image-2 
-- [Introducao](from-awesome-gpt-image-2-prompts/introducao.md) — text2image · openai/gpt-image-2 [ad-series]
-- [Introduccion](from-awesome-gpt-image-2-prompts/introduccion.md) — text2image · openai/gpt-image-2 
-- [Introduction](from-awesome-gpt-image-2-prompts/introduction.md) — text2image · openai/gpt-image-2 [ui-system]
-- [Введение](from-awesome-gpt-image-2-prompts/untitled.md) — text2image · openai/gpt-image-2 
-- [简介](from-awesome-gpt-image-2-prompts/untitled.md) — text2image · openai/gpt-image-2 
-- [簡介](from-awesome-gpt-image-2-prompts/untitled.md) — text2image · openai/gpt-image-2 
-- [紹介](from-awesome-gpt-image-2-prompts/untitled.md) — text2image · openai/gpt-image-2 
-- [소개](from-awesome-gpt-image-2-prompts/untitled.md) — text2image · openai/gpt-image-2 
+- [🍌 Introduction](from-awesome-gpt-image-2-prompts/introduction.md) — text2image · openai/gpt-image-2 
 - [🍌 Portrait & Photography Cases](from-awesome-gpt-image-2-prompts/portrait-photography-cases.md) — text2image · openai/gpt-image-2 [headshot, poster, ui-system, ad-series, kpop]
 - [🎨 Poster & Illustration Cases](from-awesome-gpt-image-2-prompts/poster-illustration-cases.md) — text2image · openai/gpt-image-2 [poster, food]
 - [📣 Ad Creative Cases](from-awesome-gpt-image-2-prompts/ad-creative-cases.md) — text2image · openai/gpt-image-2 [ad-series, unbox, logo-3d]
@@ -702,6 +694,37 @@ Curated from the three source repos. Each case is one markdown file with a norma
 - [🛒 E-commerce Cases](from-awesome-gpt-image-2-prompts/e-commerce-cases.md) — text2image · openai/gpt-image-2 [poster, ui-system, ad-series, unbox]
 - [🧍 Character Design Cases](from-awesome-gpt-image-2-prompts/character-design-cases.md) — text2image · openai/gpt-image-2 [character-sheet]
 - [🧪 Comparison & Community Examples](from-awesome-gpt-image-2-prompts/comparison-community-examples.md) — text2image · openai/gpt-image-2 
+
+### `awesome-seedance` (28 cases)
+
+- [1. Cinematic Film Styles](from-awesome-seedance/1-cinematic-film-styles.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series]
+- [1.2. Denis Villeneuve Style Epic Desert Scene](from-awesome-seedance/1-2-denis-villeneuve-style-epic-desert-scene.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series]
+- [1.3. Wong Kar-wai Film Style (Rainy Phone Booth Scene)](from-awesome-seedance/1-3-wong-kar-wai-film-style-rainy-phone-booth-scene.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series, food]
+- [2. Advertising & Commercial Branding](from-awesome-seedance/2-advertising-commercial-branding.md) — text2video · bytedance/seedance-2.0-fast [ad-series]
+- [2. 商业广告 - 运动饮料](from-awesome-seedance/2.md) — text2video · bytedance/seedance-2.0-fast [ad-series]
+- [2.2. Perfume MG Animation Style](from-awesome-seedance/2-2-perfume-mg-animation-style.md) — text2video · bytedance/seedance-2.0-fast [ad-series, unbox]
+- [3. Social Media & Viral Memes](from-awesome-seedance/3-social-media-viral-memes.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, card-deck, unbox]
+- [4. UGC Style](from-awesome-seedance/4-ugc-style.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [4. 穿搭变装](from-awesome-seedance/4.md) — text2video · bytedance/seedance-2.0-fast [lookbook, ad-series]
+- [5. Anime & Animation Styles](from-awesome-seedance/5-anime-animation-styles.md) — image2image · bytedance/seedance-2.0-fast [anime]
+- [5. 直播带货 - SK-II面霜](from-awesome-seedance/5-sk-ii.md) — text2video · bytedance/seedance-2.0-fast 
+- [5.2. Nezha and Ao Bing Ice-Fire Clash (Space-Time Folding)](from-awesome-seedance/5-2-nezha-and-ao-bing-ice-fire-clash-space-time-folding.md) — text2video · bytedance/seedance-2.0-fast [dance, ui-system, ad-series, fantasy]
+- [5.3. Otter Mecha Anime Battle (Mech vs. Octopus)](from-awesome-seedance/5-3-otter-mecha-anime-battle-mech-vs-octopus.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, anime]
+- [5.4. X Bookmarks Pick: 10 Must-Try Animation Styles](from-awesome-seedance/5-4-x-bookmarks-pick-10-must-try-animation-styles.md) — text2video · bytedance/seedance-2.0-fast [dance]
+- [5.5. Van Gogh Post-Impressionism Style Animation](from-awesome-seedance/5-5-van-gogh-post-impressionism-style-animation.md) — text2video · bytedance/seedance-2.0-fast [ad-series]
+- [5.5. X Bookmarks Pick: Why Won’t It Stay?!](from-awesome-seedance/5-5-x-bookmarks-pick-why-won-t-it-stay.md) — text2video · bytedance/seedance-2.0-fast [dance]
+- [5.6. Motion Graphics](from-awesome-seedance/5-6-motion-graphics.md) — text2video · bytedance/seedance-2.0-fast [dance, ad-series]
+- [5.6. Tournament of Power with Famous Anime Characters](from-awesome-seedance/5-6-tournament-of-power-with-famous-anime-characters.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, unbox, anime]
+- [5.7. Luffy Coding on MacBook (Comedy Scene)](from-awesome-seedance/5-7-luffy-coding-on-macbook-comedy-scene.md) — text2video · bytedance/seedance-2.0-fast 
+- [6. Short-form Drama & Web Series](from-awesome-seedance/6-short-form-drama-web-series.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [6. 动态海报](from-awesome-seedance/6.md) — text2video · bytedance/seedance-2.0-fast [poster]
+- [6.2. Chinese Mini-Drama Style (Rainy Night Emotional Scene)](from-awesome-seedance/6-2-chinese-mini-drama-style-rainy-night-emotional-scene.md) — text2video · bytedance/seedance-2.0-fast [dance, poster, ui-system, ad-series]
+- [6.3. Chinese Viral CEO Drama Style (Vertical Format)](from-awesome-seedance/6-3-chinese-viral-ceo-drama-style-vertical-format.md) — text2video · bytedance/seedance-2.0-fast [headshot, dance, poster, ui-system, ad-series, card-deck, unbox, fantasy]
+- [7. Visual Effects & Experimental Styles](from-awesome-seedance/7-visual-effects-experimental-styles.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series, unbox, sci-fi]
+- [7. 广告复刻 - 无人机](from-awesome-seedance/7.md) — text2video · bytedance/seedance-2.0-fast [ad-series]
+- [8. 真人短剧 - 豪门恩怨](from-awesome-seedance/8.md) — text2video · bytedance/seedance-2.0-fast 
+- [9. AI漫剧 - 武侠](from-awesome-seedance/9-ai.md) — text2video · bytedance/seedance-2.0-fast [anime]
+- [Sponsor](from-awesome-seedance/sponsor.md) — text2video · bytedance/seedance-2.0-fast [dance, ad-series]
 
 ### `awesome-seedance-2-guide` (63 cases)
 
@@ -768,3 +791,111 @@ Curated from the three source repos. Each case is one markdown file with a norma
 - [📁 Repository Structure](from-awesome-seedance-2-guide/repository-structure.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
 - [📋 Parameter Specifications](from-awesome-seedance-2-guide/parameter-specifications.md) — image2video · bytedance/seedance-2.0-fast [ad-series, unbox]
 - [📝 Prompt Templates](from-awesome-seedance-2-guide/prompt-templates.md) — text2video · bytedance/seedance-2.0-fast [unbox]
+
+### `awesome-seedance-2-prompts` (105 cases)
+
+- [3D Animated Boy Building Lego](from-awesome-seedance-2-prompts/3d-animated-boy-building-lego.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, unbox]
+- [3D CGI Action Sequence Animation Prompt](from-awesome-seedance-2-prompts/3d-cgi-action-sequence-animation-prompt.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Alien Infestation Sci-Fi Scene](from-awesome-seedance-2-prompts/alien-infestation-sci-fi-scene.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series, unbox, sci-fi]
+- [Aliens Playing Chess](from-awesome-seedance-2-prompts/aliens-playing-chess.md) — text2video · bytedance/seedance-2.0-fast 
+- [Amazon Jungle Insectoid Drone Flight](from-awesome-seedance-2-prompts/amazon-jungle-insectoid-drone-flight.md) — text2video · bytedance/seedance-2.0-fast [poster, ad-series, unbox, sci-fi, fantasy]
+- [Ancient Indian Kingdom FPV Drone Shot](from-awesome-seedance-2-prompts/ancient-indian-kingdom-fpv-drone-shot.md) — text2video · bytedance/seedance-2.0-fast [ad-series]
+- [Ancient Indian Kingdom FPV Video](from-awesome-seedance-2-prompts/ancient-indian-kingdom-fpv-video.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series]
+- [Ancient Sauvira Kingdom FPV](from-awesome-seedance-2-prompts/ancient-sauvira-kingdom-fpv.md) — text2video · bytedance/seedance-2.0-fast [ad-series]
+- [Ancient Tree Narrative Sequence](from-awesome-seedance-2-prompts/ancient-tree-narrative-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Animated mission of Barnaby the robot ant](from-awesome-seedance-2-prompts/animated-mission-of-barnaby-the-robot-ant.md) — text2video · bytedance/seedance-2.0-fast [ui-system]
+- [Animation transfer and camera tracking prompt](from-awesome-seedance-2-prompts/animation-transfer-and-camera-tracking-prompt.md) — text2video · bytedance/seedance-2.0-fast [ui-system]
+- [Anime character makeup routine](from-awesome-seedance-2-prompts/anime-character-makeup-routine.md) — text2video · bytedance/seedance-2.0-fast [ui-system, anime]
+- [Apocalyptic Jakarta Transformation](from-awesome-seedance-2-prompts/apocalyptic-jakarta-transformation.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Beat-Synced Outfit Transformation Dance](from-awesome-seedance-2-prompts/beat-synced-outfit-transformation-dance.md) — text2video · bytedance/seedance-2.0-fast [dance, lookbook]
+- [Beauty Influencer Vlog Prompt](from-awesome-seedance-2-prompts/beauty-influencer-vlog-prompt.md) — text2video · bytedance/seedance-2.0-fast [ad-series]
+- [Blueberry Pie Baking Storyboard](from-awesome-seedance-2-prompts/blueberry-pie-baking-storyboard.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Celebrity Airport Entry Scene](from-awesome-seedance-2-prompts/celebrity-airport-entry-scene.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Cinematic Dragon Interaction & Flight](from-awesome-seedance-2-prompts/cinematic-dragon-interaction-flight.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, fantasy]
+- [Cinematic Emotional Confrontation Prompt](from-awesome-seedance-2-prompts/cinematic-emotional-confrontation-prompt.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, anime]
+- [Cinematic Emotional Face Close-up](from-awesome-seedance-2-prompts/cinematic-emotional-face-close-up.md) — text2video · bytedance/seedance-2.0-fast [headshot, poster, ui-system, ad-series]
+- [Cinematic Football Freestyle Sequence](from-awesome-seedance-2-prompts/cinematic-football-freestyle-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, anime, minimalist]
+- [Cinematic Hockey Sequence](from-awesome-seedance-2-prompts/cinematic-hockey-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Cinematic Japanese Takoyaki Chef Prompt](from-awesome-seedance-2-prompts/cinematic-japanese-takoyaki-chef-prompt.md) — text2video · bytedance/seedance-2.0-fast [ui-system, unbox]
+- [Cinematic kitchen close-up video](from-awesome-seedance-2-prompts/cinematic-kitchen-close-up-video.md) — text2video · bytedance/seedance-2.0-fast [minimalist]
+- [Cinematic Marine Biologist Exploration](from-awesome-seedance-2-prompts/cinematic-marine-biologist-exploration.md) — text2video · bytedance/seedance-2.0-fast [ui-system]
+- [Cinematic Rugby Storyboard](from-awesome-seedance-2-prompts/cinematic-rugby-storyboard.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Cinematic Soccer Storyboard Prompt](from-awesome-seedance-2-prompts/cinematic-soccer-storyboard-prompt.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series]
+- [Cinematic Storyboard Video Extension](from-awesome-seedance-2-prompts/cinematic-storyboard-video-extension.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, minimalist]
+- [Cinematic vampire alley fight sequence](from-awesome-seedance-2-prompts/cinematic-vampire-alley-fight-sequence.md) — text2video · bytedance/seedance-2.0-fast 
+- [Citrus Glow Skincare Product Video](from-awesome-seedance-2-prompts/citrus-glow-skincare-product-video.md) — text2video · bytedance/seedance-2.0-fast [ui-system, unbox, minimalist]
+- [Classroom Gathering and Group Photo](from-awesome-seedance-2-prompts/classroom-gathering-and-group-photo.md) — image2image · bytedance/seedance-2.0-fast [ad-series]
+- [Comic-Pop Car Debate](from-awesome-seedance-2-prompts/comic-pop-car-debate.md) — text2video · bytedance/seedance-2.0-fast [ui-system]
+- [Crimson Horizon Sci-Fi Cinematic Sequence](from-awesome-seedance-2-prompts/crimson-horizon-sci-fi-cinematic-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, card-deck, sci-fi]
+- [Cyberpunk Cyber-Manga Motorcycle Chase Prompt](from-awesome-seedance-2-prompts/cyberpunk-cyber-manga-motorcycle-chase-prompt.md) — text2video · bytedance/seedance-2.0-fast [ad-series, anime, sci-fi]
+- [Cyberpunk Cybernetic Fighter Combat](from-awesome-seedance-2-prompts/cyberpunk-cybernetic-fighter-combat.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, sci-fi]
+- [Dragon Transformer School Bus Transformation](from-awesome-seedance-2-prompts/dragon-transformer-school-bus-transformation.md) — text2video · bytedance/seedance-2.0-fast [poster, ad-series, sci-fi, fantasy]
+- [Emotional Kitten Rescue Scene](from-awesome-seedance-2-prompts/emotional-kitten-rescue-scene.md) — text2video · bytedance/seedance-2.0-fast [ui-system]
+- [Enchanted Ice Skating Battle Prompt](from-awesome-seedance-2-prompts/enchanted-ice-skating-battle-prompt.md) — text2video · bytedance/seedance-2.0-fast 
+- [Epic Fantasy Giant Encounter](from-awesome-seedance-2-prompts/epic-fantasy-giant-encounter.md) — text2video · bytedance/seedance-2.0-fast [ad-series, fantasy]
+- [Fashion Ad Storyboard Animation](from-awesome-seedance-2-prompts/fashion-ad-storyboard-animation.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, lookbook, ad-series, unbox, logo-3d, minimalist]
+- [Fashion Wardrobe Summer Lookbook](from-awesome-seedance-2-prompts/fashion-wardrobe-summer-lookbook.md) — text2video · bytedance/seedance-2.0-fast [ui-system, lookbook, ad-series, minimalist]
+- [Female street basketball freestyle video](from-awesome-seedance-2-prompts/female-street-basketball-freestyle-video.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, logo-3d]
+- [Fitness Transformation Commercial](from-awesome-seedance-2-prompts/fitness-transformation-commercial.md) — text2video · bytedance/seedance-2.0-fast [ui-system, lookbook, ad-series, unbox, food]
+- [Football Player Stadium Tunnel Sequence](from-awesome-seedance-2-prompts/football-player-stadium-tunnel-sequence.md) — text2video · bytedance/seedance-2.0-fast [dance, poster, ad-series]
+- [Formula Race Warzone Sequence](from-awesome-seedance-2-prompts/formula-race-warzone-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [FPV Tracking Shot Parkour Runner](from-awesome-seedance-2-prompts/fpv-tracking-shot-parkour-runner.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Ghibli Style Magical Adventure Storyboard](from-awesome-seedance-2-prompts/ghibli-style-magical-adventure-storyboard.md) — text2video · bytedance/seedance-2.0-fast [poster, ghibli, ui-system, ad-series, card-deck, unbox]
+- [Handheld Yoga Vinyasa Flow Video](from-awesome-seedance-2-prompts/handheld-yoga-vinyasa-flow-video.md) — text2video · bytedance/seedance-2.0-fast 
+- [High-Energy Anime Arena Visuals](from-awesome-seedance-2-prompts/high-energy-anime-arena-visuals.md) — text2video · bytedance/seedance-2.0-fast [anime]
+- [Humorous Fast Food Sprint Commercial](from-awesome-seedance-2-prompts/humorous-fast-food-sprint-commercial.md) — text2video · bytedance/seedance-2.0-fast [ad-series, logo-3d, food]
+- [Hunched Character Animation](from-awesome-seedance-2-prompts/hunched-character-animation.md) — text2video · bytedance/seedance-2.0-fast 
+- [Ice Beast VFX Transformation](from-awesome-seedance-2-prompts/ice-beast-vfx-transformation.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series, unbox]
+- [Ice Queen Transformation Fantasy Sequence](from-awesome-seedance-2-prompts/ice-queen-transformation-fantasy-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, fantasy]
+- [Industrial Action Hero Shot](from-awesome-seedance-2-prompts/industrial-action-hero-shot.md) — text2video · bytedance/seedance-2.0-fast [lookbook]
+- [Industrial Factory Combat Sequence](from-awesome-seedance-2-prompts/industrial-factory-combat-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Influencer style Mars spaceport video](from-awesome-seedance-2-prompts/influencer-style-mars-spaceport-video.md) — image2video · bytedance/seedance-2.0-fast [ui-system, lookbook, ad-series]
+- [K-Pop Choreography Sequence](from-awesome-seedance-2-prompts/k-pop-choreography-sequence.md) — text2video · bytedance/seedance-2.0-fast [dance, ui-system, lookbook, ad-series, kpop, minimalist]
+- [LEGO Time-Lapse Build Sequence](from-awesome-seedance-2-prompts/lego-time-lapse-build-sequence.md) — image2video · bytedance/seedance-2.0-fast [ui-system, lookbook, ad-series, unbox]
+- [Luxury Coast Road Trip Shot Sequence](from-awesome-seedance-2-prompts/luxury-coast-road-trip-shot-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, unbox]
+- [Luxury Perfume Drone Shot Advertisement Prompt](from-awesome-seedance-2-prompts/luxury-perfume-drone-shot-advertisement-prompt.md) — text2video · bytedance/seedance-2.0-fast [dance, ui-system, lookbook, ad-series, unbox, logo-3d]
+- [Luxury Skincare Storyboard Motion Prompt](from-awesome-seedance-2-prompts/luxury-skincare-storyboard-motion-prompt.md) — text2video · bytedance/seedance-2.0-fast [headshot, ui-system, ad-series, unbox, infographic, minimalist]
+- [Magical Academy Storyboard Sequence](from-awesome-seedance-2-prompts/magical-academy-storyboard-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, unbox]
+- [Metal Forge Visual Effect](from-awesome-seedance-2-prompts/metal-forge-visual-effect.md) — text2video · bytedance/seedance-2.0-fast 
+- [Military Convoy Desert Chase](from-awesome-seedance-2-prompts/military-convoy-desert-chase.md) — text2video · bytedance/seedance-2.0-fast 
+- [Minimalist Menswear Editorial GRWM](from-awesome-seedance-2-prompts/minimalist-menswear-editorial-grwm.md) — image2video · bytedance/seedance-2.0-fast [ui-system, lookbook, ad-series, minimalist]
+- [Motion Graphics Intro: Chaos Unit](from-awesome-seedance-2-prompts/motion-graphics-intro-chaos-unit.md) — image2image · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Mythological Lightning God Epic Video](from-awesome-seedance-2-prompts/mythological-lightning-god-epic-video.md) — text2video · bytedance/seedance-2.0-fast [poster, ad-series, fantasy]
+- [Neon Tokyo Night Rain Walk](from-awesome-seedance-2-prompts/neon-tokyo-night-rain-walk.md) — text2video · bytedance/seedance-2.0-fast 
+- [No. 2: Hollywood Haute Couture Fantasy Video Prompt](from-awesome-seedance-2-prompts/no-2-hollywood-haute-couture-fantasy-video-prompt.md) — text2video · bytedance/seedance-2.0-fast [ui-system, lookbook, ad-series, fantasy, minimalist]
+- [No. 3: Modern Rural Aesthetics Healing Short Film Video Prompt](from-awesome-seedance-2-prompts/no-3-modern-rural-aesthetics-healing-short-film-video-prompt.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, lookbook, ad-series, food]
+- [No. 4: Live-Action Anime Adaptation: Water vs. Thunder Breathing Duel](from-awesome-seedance-2-prompts/no-4-live-action-anime-adaptation-water-vs-thunder-breathing-duel.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series, anime, fantasy]
+- [No. 5: Seedance 2.0: 80-Year-Old Rapper MV](from-awesome-seedance-2-prompts/no-5-seedance-2-0-80-year-old-rapper-mv.md) — text2video · bytedance/seedance-2.0-fast [dance, ui-system, ad-series]
+- [No. 6: Cinematic Street Racing Sequence for Seedance 2](from-awesome-seedance-2-prompts/no-6-cinematic-street-racing-sequence-for-seedance-2.md) — text2video · bytedance/seedance-2.0-fast [dance, ui-system, ad-series]
+- [Orange Cat Ninja Heist](from-awesome-seedance-2-prompts/orange-cat-ninja-heist.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, lookbook, ad-series, food]
+- [Painting Progress Cinematic Sequence](from-awesome-seedance-2-prompts/painting-progress-cinematic-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Parallel Self Encounter](from-awesome-seedance-2-prompts/parallel-self-encounter.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Pencak Silat Martial Arts Sequence](from-awesome-seedance-2-prompts/pencak-silat-martial-arts-sequence.md) — text2video · bytedance/seedance-2.0-fast [dance, poster, ui-system, ad-series, infographic, minimalist]
+- [Phone Upgrade Dramatic Story](from-awesome-seedance-2-prompts/phone-upgrade-dramatic-story.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, unbox, logo-3d]
+- [Poster-to-Video Fashion Ad](from-awesome-seedance-2-prompts/poster-to-video-fashion-ad.md) — image2video · bytedance/seedance-2.0-fast [poster, lookbook, ad-series]
+- [Retro Disney Style Dragon and Pirates](from-awesome-seedance-2-prompts/retro-disney-style-dragon-and-pirates.md) — text2video · bytedance/seedance-2.0-fast [ad-series, fantasy]
+- [Rocket-Powered Mountain Bike Race](from-awesome-seedance-2-prompts/rocket-powered-mountain-bike-race.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, unbox]
+- [Scrolling to Building Narrative](from-awesome-seedance-2-prompts/scrolling-to-building-narrative.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Seedance 2.0 Storyboard-to-Animation Prompt](from-awesome-seedance-2-prompts/seedance-2-0-storyboard-to-animation-prompt.md) — text2video · bytedance/seedance-2.0-fast [dance]
+- [Shield Deflection Action Sequence](from-awesome-seedance-2-prompts/shield-deflection-action-sequence.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Soda Commercial Cinematic Scene](from-awesome-seedance-2-prompts/soda-commercial-cinematic-scene.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series]
+- [Soul-Switching Mirror Magic Sequence](from-awesome-seedance-2-prompts/soul-switching-mirror-magic-sequence.md) — text2video · bytedance/seedance-2.0-fast [ad-series]
+- [Storyboard Animation Sequence](from-awesome-seedance-2-prompts/storyboard-animation-sequence.md) — image2video · bytedance/seedance-2.0-fast [lookbook, ad-series]
+- [Sunny Park Picnic and Bicycle Storyboard](from-awesome-seedance-2-prompts/sunny-park-picnic-and-bicycle-storyboard.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Super-Speed Kitchen Action Comedy Prompt](from-awesome-seedance-2-prompts/super-speed-kitchen-action-comedy-prompt.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, lookbook, ad-series, food]
+- [Superhuman Heroine in Metropolis](from-awesome-seedance-2-prompts/superhuman-heroine-in-metropolis.md) — image2image · bytedance/seedance-2.0-fast [ui-system, ad-series, unbox]
+- [Supermarket Grocery Shopping Vlog](from-awesome-seedance-2-prompts/supermarket-grocery-shopping-vlog.md) — text2video · bytedance/seedance-2.0-fast [lookbook, unbox, minimalist]
+- [Suspenseful Alleyway Scene](from-awesome-seedance-2-prompts/suspenseful-alleyway-scene.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, unbox]
+- [Teenage Girl Basketball Freestyle](from-awesome-seedance-2-prompts/teenage-girl-basketball-freestyle.md) — image2video · bytedance/seedance-2.0-fast [dance, ui-system, lookbook, ad-series, unbox, minimalist]
+- [The Alien Donut Animation](from-awesome-seedance-2-prompts/the-alien-donut-animation.md) — text2video · bytedance/seedance-2.0-fast [ui-system, sci-fi]
+- [The Great Cookie Heist: Hamster Animation](from-awesome-seedance-2-prompts/the-great-cookie-heist-hamster-animation.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series, unbox]
+- [Toaster Rocket Jumpscare](from-awesome-seedance-2-prompts/toaster-rocket-jumpscare.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series]
+- [Traditional Chinese Ink Wash Video Generation](from-awesome-seedance-2-prompts/traditional-chinese-ink-wash-video-generation.md) — text2video · bytedance/seedance-2.0-fast [ad-series]
+- [Traditional Dance Performance](from-awesome-seedance-2-prompts/traditional-dance-performance.md) — image2image · bytedance/seedance-2.0-fast [dance, ui-system, ad-series]
+- [Urban Freestyle Dance Script](from-awesome-seedance-2-prompts/urban-freestyle-dance-script.md) — text2video · bytedance/seedance-2.0-fast [dance, ui-system, lookbook, ad-series]
+- [Urban Warzone Superpowered Combat](from-awesome-seedance-2-prompts/urban-warzone-superpowered-combat.md) — text2video · bytedance/seedance-2.0-fast [ui-system]
+- [Vintage Disney Style Pirate Crocodile Animation](from-awesome-seedance-2-prompts/vintage-disney-style-pirate-crocodile-animation.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series]
+- [Wasteland Factory Chase](from-awesome-seedance-2-prompts/wasteland-factory-chase.md) — text2video · bytedance/seedance-2.0-fast 
+- [Woven Hamburger ASMR](from-awesome-seedance-2-prompts/woven-hamburger-asmr.md) — text2video · bytedance/seedance-2.0-fast [ui-system, ad-series, unbox, food]
+- [🎬 All Prompts](from-awesome-seedance-2-prompts/all-prompts.md) — image2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series]
+- [🔥 Featured Prompts](from-awesome-seedance-2-prompts/featured-prompts.md) — text2video · bytedance/seedance-2.0-fast [poster, ui-system, ad-series]

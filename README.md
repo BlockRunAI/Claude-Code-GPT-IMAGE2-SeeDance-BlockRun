@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="prompts/case-library/INDEX.md"><img src="examples/cover.jpg" alt="Claude Code-GPT-IMAGE2-SeeDance-BlockRun cover — 360 real outputs from the bundled case library (1,010 prompts curated from awesome-gpt-image-2-prompts, awesome-gpt-image-2, and awesome-seedance-2-guide)" width="100%"/></a>
+  <a href="prompts/case-library/INDEX.md"><img src="examples/cover.jpg" alt="Claude Code-GPT-IMAGE2-SeeDance-BlockRun cover — 360 real outputs from the bundled case library (848 prompts curated from awesome-gpt-image-2-prompts, awesome-gpt-image-2, awesome-seedance-2-guide, awesome-seedance, and awesome-seedance-2-prompts)" width="100%"/></a>
 </p>
 
 <h1 align="center">Claude Code-GPT-IMAGE2-SeeDance-BlockRun</h1>
 
 <p align="center">
   <b>Run any awesome-gpt-image-2 or Seedance prompt as a one-line Claude Code command.</b><br/>
-  <code>/headshot</code> · <code>/dance</code> · <code>/poster</code> · 1,010 cases · pay-per-image USDC on Base via <a href="https://blockrun.ai">BlockRun</a>
+  <code>/headshot</code> · <code>/dance</code> · <code>/poster</code> · 848 cases · pay-per-image USDC on Base via <a href="https://blockrun.ai">BlockRun</a>
 </p>
 
 <p align="center">
@@ -71,12 +71,14 @@ That's it.
 
 ## What is this
 
-The two big GPT Image 2 awesome lists ([EvoLinkAI](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts),
-[freestylefly](https://github.com/freestylefly/awesome-gpt-image-2)) and the
-[awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide)
-are gold mines of viral image / video prompts. But they're **static** —
-you copy a prompt, paste it into someone's chat UI, fight with the
-upload, and pay through some subscription you never wanted.
+Five gold-mine awesome lists ([EvoLinkAI](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts),
+[freestylefly](https://github.com/freestylefly/awesome-gpt-image-2),
+[EvoLinkAI/awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide),
+[ZeroLu/awesome-seedance](https://github.com/ZeroLu/awesome-seedance),
+[YouMind-OpenLab/awesome-seedance-2-prompts](https://github.com/YouMind-OpenLab/awesome-seedance-2-prompts))
+collectively curate ~850 viral GPT Image 2 + Seedance prompts. But they're
+**static** — you copy a prompt, paste it into someone's chat UI, fight
+with the upload, and pay through some subscription you never wanted.
 
 This bundle turns them into **executable Claude Code commands**:
 
@@ -318,17 +320,27 @@ for the full breakdown of all underlying gateway prices.
 </table>
 <!-- GALLERY:END -->
 
-**Want the full 700+ case catalog?** See [`prompts/case-library/INDEX.md`](prompts/case-library/INDEX.md) — grouped by tag and source repo.
+**Want the full 800+ case catalog?** See [`prompts/case-library/INDEX.md`](prompts/case-library/INDEX.md) — grouped by tag and source repo.
 
 ### Full case library
 
 | Workflow | Cases |
 |---|---|
-| Text → image | 268 |
-| Text → video | 106 |
-| Image → image (edit) | 322 |
-| Image → video | 27 |
-| **Total** | **723** unique cases (96% with hero image attached) |
+| Text → image | 259 |
+| Text → video | 227 |
+| Image → image (edit) | 328 |
+| Image → video | 34 |
+| **Total** | **848** unique cases (94% with hero image attached) |
+
+By source repo:
+
+| Source | Cases | Workflows |
+|---|---|---|
+| [`EvoLinkAI/awesome-gpt-image-2-prompts`](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts) | 300 | text→image, image→image |
+| [`freestylefly/awesome-gpt-image-2`](https://github.com/freestylefly/awesome-gpt-image-2) | 352 | image→image edits |
+| [`EvoLinkAI/awesome-seedance-2-guide`](https://github.com/EvoLinkAI/awesome-seedance-2-guide) | 63 | image→video |
+| [`ZeroLu/awesome-seedance`](https://github.com/ZeroLu/awesome-seedance) | 28 | text→video (cinematic) |
+| [`YouMind-OpenLab/awesome-seedance-2-prompts`](https://github.com/YouMind-OpenLab/awesome-seedance-2-prompts) | 105 | text→video |
 
 Every case is a single markdown file with normalized frontmatter (title,
 source, credit, workflow, model, tags) plus the original demo image
@@ -336,7 +348,7 @@ embedded. See [`prompts/case-library/INDEX.md`](prompts/case-library/INDEX.md)
 for the full browseable catalog grouped by tag and source.
 
 > v1 ships with 3 polished slash commands (`/headshot`, `/dance`,
-> `/poster`). The 700+ cases above are the runway for v1.1+ — each tag in
+> `/poster`). The 800+ cases above are the runway for v1.1+ — each tag in
 > the index is a candidate slash command in waiting.
 
 | Vibe | Source | One-line command |
@@ -389,9 +401,11 @@ discussions: [github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun](ht
 
 The viral prompt patterns in `prompts/case-library/` were curated from:
 
-- **[EvoLinkAI/awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts)** — text-to-image and image-to-image template gold mine
-- **[freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)** — image-to-image edits, style transfers, character consistency
-- **[EvoLinkAI/awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide)** — Seedance text-to-video and image-to-video case studies
+- **[EvoLinkAI/awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts)** — 300 cases · text-to-image and image-to-image template gold mine
+- **[freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)** — 352 cases · image-to-image edits, style transfers, character consistency
+- **[EvoLinkAI/awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide)** — 63 cases · Seedance text-to-video and image-to-video case studies
+- **[ZeroLu/awesome-seedance](https://github.com/ZeroLu/awesome-seedance)** — 28 cases · cinematic Seedance 2.0 prompts (Hollywood, Denis Villeneuve, Wong Kar-wai-style multi-shot scripts)
+- **[YouMind-OpenLab/awesome-seedance-2-prompts](https://github.com/YouMind-OpenLab/awesome-seedance-2-prompts)** — 105 cases · structured Seedance 2.0 prompts with detailed scene/shot specifications and Cloudflare Stream video previews
 
 Each case file under `prompts/case-library/from-*/` includes
 `source_url` and `credit` in its frontmatter — go give those repos a star.
@@ -404,8 +418,8 @@ micropayments on Base, no subscriptions, no API keys.
 ## License
 
 MIT — see [`LICENSE`](LICENSE). Cases under `prompts/case-library/from-*/`
-retain the licenses of their original repositories (all three are
-MIT-compatible at the time of this release).
+retain the licenses of their original repositories (all five sources are
+CC BY 4.0 or MIT-compatible at the time of this release).
 
 ---
 

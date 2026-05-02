@@ -37,7 +37,7 @@ photorealistic, ultra detailed, cinematic studio lighting, realistic figurine, c
 
 ## Run via Claude Code
 
-After installing `cc-gpt-image2-seedance-blockrun`, you can adapt this case
+After installing `Claude Code-GPT-IMAGE2-SeeDance-BlockRun`, you can adapt this case
 into one of the bundle's commands. Closest match for this case based on
 detected tags: `/ui-system (v1.1)`.
 
@@ -51,5 +51,5 @@ detected tags: `/ui-system (v1.1)`.
 
 Sourced from [awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/cases/portrait.md) by EvoLinkAI.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
+[Claude Code-GPT-IMAGE2-SeeDance-BlockRun](https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun)
 bundle. Reproduced with attribution; original license applies.

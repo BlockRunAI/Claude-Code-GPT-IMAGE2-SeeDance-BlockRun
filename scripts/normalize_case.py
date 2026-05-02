@@ -58,6 +58,20 @@ REPOS = [
         "default_workflow": "image2video",
         "default_model": "bytedance/seedance-2.0-fast",
     },
+    {
+        "slug": "awesome-seedance",
+        "url": "https://github.com/ZeroLu/awesome-seedance.git",
+        "credit": "ZeroLu",
+        "default_workflow": "text2video",
+        "default_model": "bytedance/seedance-2.0-fast",
+    },
+    {
+        "slug": "awesome-seedance-2-prompts",
+        "url": "https://github.com/YouMind-OpenLab/awesome-seedance-2-prompts.git",
+        "credit": "YouMind-OpenLab",
+        "default_workflow": "text2video",
+        "default_model": "bytedance/seedance-2.0-fast",
+    },
 ]
 
 
@@ -363,7 +377,12 @@ def extract_cases_from_markdown(text: str, repo: dict, source_url: str, source_m
         )
 
 
-LANG_README_RE = re.compile(r"^readme\.[a-z][a-z0-9\-]+\.md$", re.IGNORECASE)
+# Catch language-variant READMEs in any of these layouts:
+#   README.zh-CN.md   (EvoLinkAI awesome-gpt-image-2-prompts)
+#   README-de.md      (ZeroLu awesome-seedance, EvoLinkAI awesome-seedance-2-guide)
+#   README_de-DE.md   (YouMind-OpenLab awesome-seedance-2-prompts)
+#   README_zh.md      (YouMind-OpenLab)
+LANG_README_RE = re.compile(r"^readme[\._\-][a-z][a-z0-9_\-]+\.md$", re.IGNORECASE)
 SKIP_NAMES = {"license.md", "contributing.md", "changelog.md", "code_of_conduct.md", "code-of-conduct.md"}
 
 

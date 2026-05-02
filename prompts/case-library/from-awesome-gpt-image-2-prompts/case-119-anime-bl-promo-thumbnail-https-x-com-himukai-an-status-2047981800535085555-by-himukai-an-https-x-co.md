@@ -21,7 +21,7 @@ A bright, polished anime-style promotional thumbnail with a summer romance atmos
 
 ## Run via Claude Code
 
-After installing `cc-gpt-image2-seedance-blockrun`, you can adapt this case
+After installing `Claude Code-GPT-IMAGE2-SeeDance-BlockRun`, you can adapt this case
 into one of the bundle's commands. Closest match for this case based on
 detected tags: `/ad-series (v1.2)`.
 
@@ -35,5 +35,5 @@ detected tags: `/ad-series (v1.2)`.
 
 Sourced from [awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/cases/ui.md) by EvoLinkAI.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
+[Claude Code-GPT-IMAGE2-SeeDance-BlockRun](https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun)
 bundle. Reproduced with attribution; original license applies.

@@ -367,7 +367,7 @@ def main() -> int:
     )
     p.add_argument(
         "--tagline",
-        default="1,010 cases  ·  /headshot  /dance  /poster  ·  pay per image · USDC on Base",
+        default="848 cases  ·  /headshot  /dance  /poster  ·  pay per image · USDC on Base",
         help="Subtitle overlaid below the brand.",
     )
     args = p.parse_args()

@@ -38,7 +38,7 @@ assets:
 
 ## Run via Claude Code
 
-After installing `cc-gpt-image2-seedance-blockrun`, you can adapt this case
+After installing `Claude Code-GPT-IMAGE2-SeeDance-BlockRun`, you can adapt this case
 into one of the bundle's commands. Closest match for this case based on
 detected tags: `(case-library only — no v1 command match)`.
 
@@ -52,5 +52,5 @@ detected tags: `(case-library only — no v1 command match)`.
 
 Sourced from [awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide/blob/main/use-cases/en/10-emotion.md) by EvoLinkAI.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
+[Claude Code-GPT-IMAGE2-SeeDance-BlockRun](https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun)
 bundle. Reproduced with attribution; original license applies.
