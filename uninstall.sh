@@ -20,7 +20,7 @@ say() { printf "%s%s%s\n" "$BOLD" "$1" "$RESET"; }
 ok()  { printf "%s✓%s %s\n" "$GREEN" "$RESET" "$1"; }
 warn() { printf "%s!%s %s\n" "$YELLOW" "$RESET" "$1"; }
 
-say "==> CC-GPT-IMAGE2-SeeDance-BlockRun uninstaller"
+say "==> Claude Code-GPT-IMAGE2-SeeDance-BlockRun uninstaller"
 
 # Remove only symlinks pointing into our bundle — never delete user data.
 for skill in "${SKILLS[@]}"; do

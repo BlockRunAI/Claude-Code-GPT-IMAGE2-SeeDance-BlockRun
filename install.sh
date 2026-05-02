@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# install.sh — one-command installer for CC-GPT-IMAGE2-SeeDance-BlockRun
+# install.sh — one-command installer for Claude Code-GPT-IMAGE2-SeeDance-BlockRun
 #
 # Run from the repo root after `git clone`, OR via the curl one-liner:
-#   curl -fsSL https://raw.githubusercontent.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun/main/install.sh | bash
 #
 # What it does:
 #   1. Registers the BlockRun MCP server with Claude Code (idempotent).
@@ -13,7 +13,7 @@
 
 set -euo pipefail
 
-REPO_URL="https://github.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun"
+REPO_URL="https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun"
 BUNDLE_DIR="${HOME}/.claude/blockrun-art-bundle"
 SKILLS_DIR="${HOME}/.claude/skills"
 SKILLS=(headshot dance poster)
@@ -32,7 +32,7 @@ die() { printf "%sx%s %s\n" "$RED" "$RESET" "$1" >&2; exit 1; }
 
 # --- preflight ----------------------------------------------------------------
 
-say "==> CC-GPT-IMAGE2-SeeDance-BlockRun installer"
+say "==> Claude Code-GPT-IMAGE2-SeeDance-BlockRun installer"
 
 command -v git  >/dev/null || die "git is required but not installed."
 command -v claude >/dev/null || die "Claude Code CLI ('claude') is required. Install it from https://claude.com/claude-code"

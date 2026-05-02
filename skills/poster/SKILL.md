@@ -69,7 +69,7 @@ exact message and stop:
 > ```
 >
 > Then restart Claude Code and try `/poster` again. (Full install
-> guide: `INSTALL.md` in the CC-GPT-IMAGE2-SeeDance-BlockRun bundle.)"
+> guide: `INSTALL.md` in the Claude Code-GPT-IMAGE2-SeeDance-BlockRun bundle.)"
 
 Do not proceed to the wallet preflight or image call if the MCP tools
 are missing.

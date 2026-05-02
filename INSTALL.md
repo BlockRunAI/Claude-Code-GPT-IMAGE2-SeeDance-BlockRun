@@ -7,7 +7,7 @@ Two paths. Pick whichever you trust more.
 ## Path A — One-line install (recommended)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun/main/install.sh | bash
 ```
 
 What `install.sh` does (you can read it [here](install.sh) before running):
@@ -38,7 +38,7 @@ If you'd rather do it by hand:
 claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest
 
 # 2. Clone the bundle and symlink the skills
-git clone https://github.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun \
+git clone https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun \
   ~/.claude/blockrun-art-bundle
 
 mkdir -p ~/.claude/skills
@@ -129,7 +129,7 @@ Claude Code discovers slash commands two ways:
   start.
 
 The skill path gives the cleanest UX — `/headshot` instead of
-`/CC-GPT-IMAGE2-SeeDance-BlockRun:headshot`. The bundle directory
+`/Claude Code-GPT-IMAGE2-SeeDance-BlockRun:headshot`. The bundle directory
 (`~/.claude/blockrun-art-bundle/`) holds the shared resources
 (`prompts/`, `scripts/`, `docs/`, the case library); the symlinks
 expose only the three skills to CC.
@@ -170,7 +170,7 @@ Add to `~/.zshrc` or `~/.bashrc` to persist.
 Re-run the installer — it pulls and relinks idempotently:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun/main/install.sh | bash
 ```
 
 Or manually:

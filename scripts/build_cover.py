@@ -74,7 +74,9 @@ def cache_path(cache_dir: Path, url: str) -> Path:
 
 
 REQ_HEADERS = {
-    "User-Agent": "CC-GPT-IMAGE2-SeeDance-BlockRun/build_cover.py (https://github.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun)",
+    # Use the hyphenated repo slug here (no space) — User-Agent values are
+    # robust to spaces but some upstreams treat them as token boundaries.
+    "User-Agent": "Claude-Code-GPT-IMAGE2-SeeDance-BlockRun/build_cover.py (https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun)",
 }
 
 
@@ -360,7 +362,7 @@ def main() -> int:
     p.add_argument("--workers", type=int, default=16)
     p.add_argument(
         "--brand",
-        default="CC-GPT-IMAGE2-SeeDance-BlockRun",
+        default="Claude Code-GPT-IMAGE2-SeeDance-BlockRun",
         help="Title overlaid on the cover. Pass empty string to skip overlay.",
     )
     p.add_argument(
