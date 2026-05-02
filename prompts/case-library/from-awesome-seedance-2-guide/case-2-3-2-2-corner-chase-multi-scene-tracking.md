@@ -1,0 +1,33 @@
+---
+title: "Case 2-3-2-2 · Corner Chase + Multi-Scene Tracking"
+source_repo: awesome-seedance-2-guide
+source_url: https://github.com/EvoLinkAI/awesome-seedance-2-guide/blob/main/use-cases/en/02-camera-movement.md
+credit: EvoLinkAI
+workflow: text2video
+model: bytedance/seedance-2.0-fast
+tags: [ad-series]
+inputs: {"text": true}
+---
+
+## Original prompt
+
+Reference the man's image from @image1. He is in the corridor from @image2. Completely reference all camera movement effects and the protagonist's facial expressions from @video1. The camera follows the protagonist running around the corner in @image2, then in the long corridor of @image3, the camera transitions from a rear tracking perspective to an orbit around the protagonist's front. The camera then pans right 90 degrees to shoot the fork in the road from @image4, stops abruptly then pans right 180 degrees, close-up shot of the protagonist's front face. The protagonist is panting heavily. The camera follows the protagonist's perspective orbiting around to observe the surroundings, referencing the rapid left-right orbiting camera movement from @video1 to showcase the scene. Then pull back to @image5, continue tracking the protagonist's side profile running.
+
+## Run via Claude Code
+
+After installing `cc-gpt-image2-seedance-blockrun`, you can adapt this case
+into one of the bundle's commands. Closest match for this case based on
+detected tags: `/ad-series (v1.2)`.
+
+```text
+# Suggested invocation (manual prompt — wire into a command in v1.1+)
+> Use the prompt above with mcp__blockrun__blockrun_image, model=bytedance/seedance-2.0-fast,
+  action=generate.
+```
+
+## Credit & license
+
+Sourced from [awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide/blob/main/use-cases/en/02-camera-movement.md) by EvoLinkAI.
+This case file is part of the curated `prompts/case-library/` in the
+[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+bundle. Reproduced with attribution; original license applies.

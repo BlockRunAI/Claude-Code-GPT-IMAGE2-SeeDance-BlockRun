@@ -1,0 +1,33 @@
+---
+title: "Case 93: [Anime VTuber Minecraft Stream Thumbnail](https://x.com/rerxmsz06/status/2047261622121705782) (by [@rerxmsz06]("
+source_repo: awesome-gpt-image-2-prompts
+source_url: https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/cases/ui.md
+credit: EvoLinkAI
+workflow: text2image
+model: openai/gpt-image-2
+tags: [lookbook, ad-series, anime]
+inputs: {"text": true}
+---
+
+## Original prompt
+
+A vibrant anime-style YouTube thumbnail for a livestream gaming broadcast, in a wide 16:9 composition, with a neon purple and pink streamer room. Center the scene on a cute catgirl VTuber sitting at a desk, shown from the waist up, leaning forward energetically with one hand on a computer mouse and the other hand reaching toward the viewer. She has {argument name="hair color" default="light orange-blonde"} bob-cut hair with soft bangs, fluffy brown-and-cream cat ears, and a visible cat tail. Her face is intentionally obscured by a solid rectangular censor block in the center. She wears a black-and-white maid-inspired outfit with a frilly white blouse, black dress bodice, puff sleeves, white ruffles, black ribbon bow, and a gold bell choker. Place a mechanical keyboard with bright RGB lighting on the desk, a glowing gaming mouse, and a streamer microphone on the far left with pink-purple LED lighting. Put 2 cat-themed desk items in the foreground: a plush cat face on the bottom left and a black cat-shaped mug on the bottom right. Behind her is a gaming chair with paw-print details. On the left side, add large bold Korean headline text in thick white block letters with black fill shadows and a glowing purple outline, stacked in 2 lines: {argument name="headline text" default="방송중 대참사"}. Below it, add a smaller yellow comic-style burst caption with black outline reading {argument name="sub text" default="> 크리퍼 실화냐"}. On the right side, show 1 large computer monitor angled inward, displaying a Minecraft-like scene with bright blue sky, green trees, water, and a large green Creeper popping out toward the viewer, outlined dramatically like a sticker cutout. Add starburst effects and neon accents around the monitor to heighten the chaos. Use exaggerated thumbnail aesthetics: ultra-saturated colors, sharp cel shading, thick outlines, glossy highlights, high contrast, dynamic perspective, and a clickworthy streamer-disaster mood.
+
+## Run via Claude Code
+
+After installing `cc-gpt-image2-seedance-blockrun`, you can adapt this case
+into one of the bundle's commands. Closest match for this case based on
+detected tags: `/lookbook (v1.2)`.
+
+```text
+# Suggested invocation (manual prompt — wire into a command in v1.1+)
+> Use the prompt above with mcp__blockrun__blockrun_image, model=openai/gpt-image-2,
+  action=generate.
+```
+
+## Credit & license
+
+Sourced from [awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/cases/ui.md) by EvoLinkAI.
+This case file is part of the curated `prompts/case-library/` in the
+[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+bundle. Reproduced with attribution; original license applies.

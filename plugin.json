@@ -1,0 +1,55 @@
+{
+  "name": "cc-gpt-image2-seedance-blockrun",
+  "version": "0.1.0",
+  "description": "Run any awesome-gpt-image-2 or Seedance prompt as a Claude Code command. Pay per image with x402 USDC on Base via BlockRun.ai. Three viral one-command workflows: /headshot, /dance, /poster.",
+  "author": "BlockRun.ai",
+  "homepage": "https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "claude-code-skill",
+    "gpt-image-2",
+    "seedance",
+    "bytedance-video",
+    "blockrun",
+    "x402",
+    "usdc",
+    "base",
+    "ai-image",
+    "ai-video",
+    "image-to-video",
+    "headshot-generator",
+    "movie-poster",
+    "dance-video",
+    "viral-prompts",
+    "awesome-gpt-image-2",
+    "awesome-seedance",
+    "mcp"
+  ],
+  "requires": {
+    "claudeCode": ">=1.0.0"
+  },
+  "mcpServersNote": "MCP server registration lives in `.mcp.json` at the plugin root. Installing this plugin automatically launches `@blockrun/mcp` via npx and exposes mcp__blockrun__blockrun_image, blockrun_video, and blockrun_wallet — no separate install step required.",
+  "skills": [
+    {
+      "id": "headshot",
+      "path": "skills/headshot/SKILL.md",
+      "description": "Studio-quality professional headshot in ~10 seconds via gpt-image-2."
+    },
+    {
+      "id": "dance",
+      "path": "skills/dance/SKILL.md",
+      "description": "Turn any photo into a 5-second dance video via Seedance 2.0-fast."
+    },
+    {
+      "id": "poster",
+      "path": "skills/poster/SKILL.md",
+      "description": "Cinema-grade movie or event poster via gpt-image-2 with multilingual typography."
+    }
+  ],
+  "outputDirectory": {
+    "default": "./blockrun-out/{timestamp}-{command}/",
+    "envOverride": "BLOCKRUN_OUT_DIR"
+  },
+  "tags": ["image-generation", "video-generation", "creator-tools", "marketing", "x402"]
+}

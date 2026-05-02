@@ -1,0 +1,33 @@
+---
+title: "Case 2-3-6-3 · Henan Opera \"Zha Mei An\""
+source_repo: awesome-seedance-2-guide
+source_url: https://github.com/EvoLinkAI/awesome-seedance-2-guide/blob/main/use-cases/en/06-audio-voice.md
+credit: EvoLinkAI
+workflow: image2video
+model: bytedance/seedance-2.0-fast
+tags: [ui-system]
+inputs: {"image": "user-supplied"}
+---
+
+## Original prompt
+
+The prelude to the Henan Opera "Zha Mei An" plays. On the left, a black-robed Bao Zheng points at the red-robed Chen Shimei on the right, gritting his teeth and singing the Henan Opera: "Knife to sheath, with real evidence, how dare you not confess?" Chen Shimei's eyes dart left and right, seeking a way out, his face extremely embarrassed. At this moment, a Henan Opera female voice recitation comes from off-screen: "Wait!" Bao Zheng and Chen Shimei both look toward the right side of the frame.
+
+## Run via Claude Code
+
+After installing `cc-gpt-image2-seedance-blockrun`, you can adapt this case
+into one of the bundle's commands. Closest match for this case based on
+detected tags: `/ui-system (v1.1)`.
+
+```text
+# Suggested invocation (manual prompt — wire into a command in v1.1+)
+> Use the prompt above with mcp__blockrun__blockrun_image, model=bytedance/seedance-2.0-fast,
+  action=generate.
+```
+
+## Credit & license
+
+Sourced from [awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide/blob/main/use-cases/en/06-audio-voice.md) by EvoLinkAI.
+This case file is part of the curated `prompts/case-library/` in the
+[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+bundle. Reproduced with attribution; original license applies.

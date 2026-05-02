@@ -1,0 +1,6 @@
+{
+  "blockrun": {
+    "command": "npx",
+    "args": ["-y", "@blockrun/mcp@latest"]
+  }
+}

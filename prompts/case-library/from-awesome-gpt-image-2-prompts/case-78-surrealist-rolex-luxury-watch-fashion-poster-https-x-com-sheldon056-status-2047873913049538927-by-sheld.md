@@ -1,0 +1,33 @@
+---
+title: "Case 78: [Surrealist Rolex Luxury Watch Fashion Poster](https://x.com/Sheldon056/status/2047873913049538927) (by [@Sheld"
+source_repo: awesome-gpt-image-2-prompts
+source_url: https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/cases/poster.md
+credit: EvoLinkAI
+workflow: text2image
+model: openai/gpt-image-2
+tags: [poster, ui-system, lookbook, minimalist]
+inputs: {"text": true}
+---
+
+## Original prompt
+
+A high-fashion surrealist poster for Rolex. A deep emerald green minimalist studio with a polished reflective floor. A massive Rolex watch stands upright like a monument. A male model in a tailored dark green suit leans casually against the watch face, wearing a matching Rolex.
+
+## Run via Claude Code
+
+After installing `cc-gpt-image2-seedance-blockrun`, you can adapt this case
+into one of the bundle's commands. Closest match for this case based on
+detected tags: `/poster`.
+
+```text
+# Suggested invocation (manual prompt — wire into a command in v1.1+)
+> Use the prompt above with mcp__blockrun__blockrun_image, model=openai/gpt-image-2,
+  action=generate.
+```
+
+## Credit & license
+
+Sourced from [awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/cases/poster.md) by EvoLinkAI.
+This case file is part of the curated `prompts/case-library/` in the
+[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+bundle. Reproduced with attribution; original license applies.

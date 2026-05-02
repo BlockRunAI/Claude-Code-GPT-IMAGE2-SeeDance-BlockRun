@@ -1,0 +1,33 @@
+# Runtime output of the skill bundle (every CC call writes here)
+blockrun-out/
+
+# Awesome-repo source clones (transient, used by scripts/normalize_case.py)
+.tmp/
+/tmp/awesome-source/
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Python venv / pycache (used only by normalize_case.py at build time)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node / npm noise (we are zero-runtime-deps, but keep this for safety)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Local secrets — never commit a wallet key
+*.session
+.env
+.env.local
+
+# Generated demo binaries — keep curated examples/ but ignore raw scratch
+examples/_scratch/
+examples/**/*.tmp.*

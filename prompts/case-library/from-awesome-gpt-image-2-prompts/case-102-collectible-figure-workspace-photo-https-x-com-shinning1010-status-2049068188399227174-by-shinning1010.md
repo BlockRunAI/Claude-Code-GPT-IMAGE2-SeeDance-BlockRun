@@ -1,0 +1,49 @@
+---
+title: "Case 102: [Collectible Figure Workspace Photo](https://x.com/Shinning1010/status/2049068188399227174) (by [@Shinning1010"
+source_repo: awesome-gpt-image-2-prompts
+source_url: https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/cases/portrait.md
+credit: EvoLinkAI
+workflow: text2image
+model: openai/gpt-image-2
+tags: [ui-system, lookbook]
+inputs: {"text": true}
+---
+
+## Original prompt
+
+Photorealistic high-quality studio photo of a modern digital art workspace, showing the concept of “from 3D virtual character to real collectible figure.”
+
+In the foreground, a highly realistic collectible figurine of [Character Name / Character Identity] is placed on a round wooden display stand. The character has [facial features / appearance], [hairstyle], and a [expression / personality vibe]. The figure is wearing [outfit / costume]. The overall design is refined, premium, and instantly recognizable. The figurine should have realistic collectible statue quality, with subtle resin/sculpture material feel, while still looking highly believable and visually realistic.
+
+The pose is [character pose], natural, stable, elegant, and display-worthy. Shot from a low-angle close-up perspective with slight wide-angle distortion, vertical composition, emphasizing the full figure, clothing structure, leg lines, and pose.
+
+In the background, there is a professional 3D character design workstation with two large curved monitors. Both monitors must show the exact same character as the foreground figurine — same face, same hairstyle, same outfit, same pose, and same overall vibe — clearly expressing the idea of turning a digital 3D character into a real physical figure.
+
+The left monitor shows a gray sculpt / clay model view in a professional 3D sculpting software interface, similar to ZBrush. The gray model must match the foreground figure exactly in character design, pose, outfit structure, and facial identity.
+
+The right monitor shows the fully rendered colored version of the same character, also matching the foreground figure exactly in face, hairstyle, outfit, pose, and temperament. Together, the two monitors reinforce the workflow of “digital character design → physical collectible statue.”
+
+On the desk are a keyboard, mouse, monitor arms, drawing tablet, stylus, and other 3D modeling tools. The workspace is clean, professional, and visually premium. Optional extra elements: [weapon / accessories / theme props / IP-style design details].
+
+Lighting is a mix of soft studio lighting and indoor workspace lighting. The foreground figurine is evenly lit with clear facial and material detail, while the monitors emit cool-toned tech light. Overall mood is realistic, clean, premium, slightly shallow depth of field, ultra-detailed, emphasizing the collectible figure quality, professional 3D design studio atmosphere, and the visual concept of “from digital model to real figure.”
+
+photorealistic, ultra detailed, cinematic studio lighting, realistic figurine, collectible statue, 3D character design studio, from digital model to real figure, vertical composition
+
+## Run via Claude Code
+
+After installing `cc-gpt-image2-seedance-blockrun`, you can adapt this case
+into one of the bundle's commands. Closest match for this case based on
+detected tags: `/ui-system (v1.1)`.
+
+```text
+# Suggested invocation (manual prompt — wire into a command in v1.1+)
+> Use the prompt above with mcp__blockrun__blockrun_image, model=openai/gpt-image-2,
+  action=generate.
+```
+
+## Credit & license
+
+Sourced from [awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/cases/portrait.md) by EvoLinkAI.
+This case file is part of the curated `prompts/case-library/` in the
+[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+bundle. Reproduced with attribution; original license applies.
