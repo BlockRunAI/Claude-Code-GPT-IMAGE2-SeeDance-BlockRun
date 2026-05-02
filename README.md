@@ -1,8 +1,8 @@
 <p align="center">
-  <a href="prompts/case-library/INDEX.md"><img src="examples/cover.jpg" alt="cc-gpt-image2-seedance-blockrun cover — 360 real outputs from the bundled case library (1,010 prompts curated from awesome-gpt-image-2-prompts, awesome-gpt-image-2, and awesome-seedance-2-guide)" width="100%"/></a>
+  <a href="prompts/case-library/INDEX.md"><img src="examples/cover.jpg" alt="CC-GPT-IMAGE2-SeeDance-BlockRun cover — 360 real outputs from the bundled case library (1,010 prompts curated from awesome-gpt-image-2-prompts, awesome-gpt-image-2, and awesome-seedance-2-guide)" width="100%"/></a>
 </p>
 
-<h1 align="center">cc-gpt-image2-seedance-blockrun</h1>
+<h1 align="center">CC-GPT-IMAGE2-SeeDance-BlockRun</h1>
 
 <p align="center">
   <b>Run any awesome-gpt-image-2 or Seedance prompt as a one-line Claude Code command.</b><br/>
@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun/stargazers"><img src="https://img.shields.io/github/stars/BlockRunAI/cc-gpt-image2-seedance-blockrun?style=for-the-badge&logo=github&color=181717" alt="GitHub stars"/></a>
+  <a href="https://github.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun/stargazers"><img src="https://img.shields.io/github/stars/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun?style=for-the-badge&logo=github&color=181717" alt="GitHub stars"/></a>
   <img src="https://img.shields.io/badge/Claude_Code-Skill-D97757?style=for-the-badge&logo=anthropic" alt="Claude Code Skill"/>
   <img src="https://img.shields.io/badge/payment-x402_USDC_on_Base-0052FF?style=for-the-badge&logo=ethereum" alt="x402 USDC on Base"/>
   <img src="https://img.shields.io/badge/license-MIT-1F8B4C?style=for-the-badge" alt="MIT License"/>
@@ -24,7 +24,7 @@ that drops into your project folder, billed by the call (no subscription).
 
 ```bash
 # One-line install (registers MCP + clones bundle + symlinks /headshot, /dance, /poster)
-curl -fsSL https://raw.githubusercontent.com/BlockRunAI/cc-gpt-image2-seedance-blockrun/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun/main/install.sh | bash
 ```
 
 > Prefer not to pipe to bash? Manual two-step lives in [INSTALL.md](INSTALL.md).
@@ -381,7 +381,7 @@ for the full browseable catalog grouped by tag and source.
 | v2.0 | `/blockrun-art generate "<free description>"` smart router; full case-library executable as discoverable subcommands |
 
 Want to influence what comes next? Open an issue or vote in the
-discussions: [github.com/blockrunai/cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun).
+discussions: [github.com/blockrunai/CC-GPT-IMAGE2-SeeDance-BlockRun](https://github.com/blockrunai/CC-GPT-IMAGE2-SeeDance-BlockRun).
 
 ---
 

@@ -74,7 +74,7 @@ def cache_path(cache_dir: Path, url: str) -> Path:
 
 
 REQ_HEADERS = {
-    "User-Agent": "cc-gpt-image2-seedance-blockrun/build_cover.py (https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)",
+    "User-Agent": "CC-GPT-IMAGE2-SeeDance-BlockRun/build_cover.py (https://github.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun)",
 }
 
 

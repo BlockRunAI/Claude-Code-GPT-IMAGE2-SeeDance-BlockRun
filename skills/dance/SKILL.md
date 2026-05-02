@@ -64,7 +64,7 @@ exact message and stop:
 > ```
 >
 > Then restart Claude Code and try `/dance` again. (Full install
-> guide: `INSTALL.md` in the cc-gpt-image2-seedance-blockrun bundle.)"
+> guide: `INSTALL.md` in the CC-GPT-IMAGE2-SeeDance-BlockRun bundle.)"
 
 Do not proceed to the wallet preflight or video call if the MCP tools
 are missing.

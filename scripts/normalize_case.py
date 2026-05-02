@@ -422,7 +422,7 @@ assets:
 
 ## Run via Claude Code
 
-After installing `cc-gpt-image2-seedance-blockrun`, you can adapt this case
+After installing `CC-GPT-IMAGE2-SeeDance-BlockRun`, you can adapt this case
 into one of the bundle's commands. Closest match for this case based on
 detected tags: `{primary_command}`.
 
@@ -436,7 +436,7 @@ detected tags: `{primary_command}`.
 
 Sourced from [{source_repo}]({source_url}) by {credit}.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
+[CC-GPT-IMAGE2-SeeDance-BlockRun](https://github.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun)
 bundle. Reproduced with attribution; original license applies.
 """
 

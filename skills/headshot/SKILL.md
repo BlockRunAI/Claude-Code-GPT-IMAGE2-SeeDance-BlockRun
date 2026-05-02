@@ -63,7 +63,7 @@ and stop:
 > ```
 >
 > Then restart Claude Code and try `/headshot` again. (Full install
-> guide: `INSTALL.md` in the cc-gpt-image2-seedance-blockrun bundle.)"
+> guide: `INSTALL.md` in the CC-GPT-IMAGE2-SeeDance-BlockRun bundle.)"
 
 Do not attempt the wallet preflight or the image call if the MCP tools
 are missing.

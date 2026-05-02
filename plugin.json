@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Run any awesome-gpt-image-2 or Seedance prompt as a Claude Code command. Pay per image with x402 USDC on Base via BlockRun.ai. Three viral one-command workflows: /headshot, /dance, /poster.",
   "author": "BlockRun.ai",
-  "homepage": "https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun",
+  "homepage": "https://github.com/BlockRunAI/CC-GPT-IMAGE2-SeeDance-BlockRun",
   "license": "MIT",
   "keywords": [
     "claude-code",
@@ -28,7 +28,9 @@
   ],
   "requires": {
     "claudeCode": ">=1.0.0",
-    "mcpServers": ["blockrun"]
+    "mcpServers": [
+      "blockrun"
+    ]
   },
   "mcpServersNote": "Skills here invoke mcp__blockrun__blockrun_image, blockrun_video, and blockrun_wallet. The canonical way to register the BlockRun MCP server is: `claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest`. The .mcp.json shipped at the repo root is a best-effort fallback for marketplace install paths that read it automatically.",
   "skills": [
@@ -52,5 +54,11 @@
     "default": "./blockrun-out/{timestamp}-{command}/",
     "envOverride": "BLOCKRUN_OUT_DIR"
   },
-  "tags": ["image-generation", "video-generation", "creator-tools", "marketing", "x402"]
+  "tags": [
+    "image-generation",
+    "video-generation",
+    "creator-tools",
+    "marketing",
+    "x402"
+  ]
 }
