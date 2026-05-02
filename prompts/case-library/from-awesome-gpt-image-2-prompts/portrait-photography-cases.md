@@ -7,7 +7,28 @@ workflow: text2image
 model: openai/gpt-image-2
 tags: [headshot, poster, ui-system, ad-series, kpop]
 inputs: {"text": true}
+assets:
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case1/output.jpg"
+    alt: ""
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case84/output.jpg"
+    alt: ""
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case99/output.jpg"
+    alt: ""
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case100/output.jpg"
+    alt: ""
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case101/output.jpg"
+    alt: ""
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case102/output.jpg"
+    alt: ""
 ---
+
+![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case1/output.jpg)
 
 ## Original prompt
 
@@ -29,5 +50,5 @@ detected tags: `/headshot`.
 
 Sourced from [awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/README.md) by EvoLinkAI.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
 bundle. Reproduced with attribution; original license applies.

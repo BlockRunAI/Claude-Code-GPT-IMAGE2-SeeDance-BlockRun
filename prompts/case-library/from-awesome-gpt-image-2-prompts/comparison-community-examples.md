@@ -7,7 +7,25 @@ workflow: text2image
 model: openai/gpt-image-2
 tags: []
 inputs: {"text": true}
+assets:
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case35/output.jpg"
+    alt: ""
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/case_case65/output.jpg"
+    alt: ""
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/case_case112/output.jpg"
+    alt: ""
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case69/output.jpg"
+    alt: ""
+  - kind: image
+    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case70/output.jpg"
+    alt: ""
 ---
+
+![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case35/output.jpg)
 
 ## Original prompt
 
@@ -31,5 +49,5 @@ detected tags: `(case-library only — no v1 command match)`.
 
 Sourced from [awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts/blob/main/README.md) by EvoLinkAI.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
 bundle. Reproduced with attribution; original license applies.

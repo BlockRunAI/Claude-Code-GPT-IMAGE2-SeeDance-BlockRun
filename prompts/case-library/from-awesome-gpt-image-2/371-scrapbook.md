@@ -7,7 +7,13 @@ workflow: image2image
 model: openai/gpt-image-2
 tags: [lookbook, ad-series]
 inputs: {"image": "user-supplied"}
+assets:
+  - kind: image
+    url: "https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/case371.jpg"
+    alt: "Scrapbook 真人图与迷你分身"
 ---
+
+![Scrapbook 真人图与迷你分身](https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/case371.jpg)
 
 ## Original prompt
 
@@ -41,5 +47,5 @@ detected tags: `/lookbook (v1.2)`.
 
 Sourced from [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2/blob/main/docs/gallery-part-2.md) by freestylefly.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
 bundle. Reproduced with attribution; original license applies.

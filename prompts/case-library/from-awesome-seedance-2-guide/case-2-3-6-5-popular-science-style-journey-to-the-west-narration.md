@@ -7,7 +7,21 @@ workflow: image2video
 model: bytedance/seedance-2.0-fast
 tags: [ad-series]
 inputs: {"image": "user-supplied"}
+assets:
+  - kind: image
+    url: "https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-6/10/result.jpg"
+    alt: "▶ Click to Play"
+  - kind: video
+    url: "https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-6/10/result.mp4"
+    alt: "▶ Click to Play"
+  - kind: image
+    url: "https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-6/10/ref1.jpg"
+    alt: ""
 ---
+
+![▶ Click to Play](https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-6/10/result.jpg)
+
+[▶️ Watch source video](https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-6/10/result.mp4)
 
 ## Original prompt
 
@@ -29,5 +43,5 @@ detected tags: `/ad-series (v1.2)`.
 
 Sourced from [awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide/blob/main/use-cases/en/06-audio-voice.md) by EvoLinkAI.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
 bundle. Reproduced with attribution; original license applies.

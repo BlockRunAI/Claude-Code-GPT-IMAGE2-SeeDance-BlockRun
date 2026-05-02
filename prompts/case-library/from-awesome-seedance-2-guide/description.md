@@ -7,7 +7,11 @@ workflow: text2video
 model: bytedance/seedance-2.0-fast
 tags: [dance, ui-system]
 inputs: {"text": true}
+assets:
+  []
 ---
+
+_No source-repo demo asset attached for this case._
 
 ## Original prompt
 
@@ -30,5 +34,5 @@ detected tags: `/dance`.
 
 Sourced from [awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide/blob/main/GITHUB_SETUP.md) by EvoLinkAI.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
 bundle. Reproduced with attribution; original license applies.

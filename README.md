@@ -27,25 +27,28 @@ That's it.
 
 ## Demo
 
+> The thumbnails below are **real outputs** the underlying models produce —
+> served directly from the source `awesome-*` repos (raw URLs, no copies
+> stored here). Click through to open the full case file with the prompt,
+> attribution, and the X/Twitter post it came from.
+
 <table>
   <tr>
-    <td align="center"><b>/headshot</b><br/><i>~$0.12 · 10s</i></td>
-    <td align="center"><b>/dance</b><br/><i>~$0.75 · 60–180s</i></td>
-    <td align="center"><b>/poster</b><br/><i>~$0.12 · 15s</i></td>
+    <td align="center" width="33%"><b>/headshot</b><br/><i>~$0.12 · ~10s</i></td>
+    <td align="center" width="33%"><b>/dance</b><br/><i>~$0.75 · 60–180s</i></td>
+    <td align="center" width="33%"><b>/poster</b><br/><i>~$0.12 · ~15s</i></td>
   </tr>
   <tr>
-    <td><img src="examples/headshot/before-after.gif" alt="/headshot demo" width="280"/></td>
-    <td><img src="examples/dance/dance-hero.gif" alt="/dance demo" width="280"/></td>
-    <td><img src="examples/poster/poster-grid.jpg" alt="/poster demo" width="280"/></td>
+    <td align="center"><a href="prompts/case-library/from-awesome-gpt-image-2-prompts/case-16-soft-black-mist-idol-portrait-https-x-com-bubblebrain-status-2046518189509734903-by-bubblebrain-https.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case16/output.jpg" alt="/headshot demo — Soft Black Mist Idol Portrait" width="280"/></a></td>
+    <td align="center"><a href="https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-1/1/result.mp4"><img src="https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-1/1/result.jpg" alt="/dance demo — Seedance Character Scene Consistency (▶ click to play)" width="280"/></a></td>
+    <td align="center"><a href="prompts/case-library/from-awesome-gpt-image-2-prompts/case-1-boston-spring-2026-city-poster-https-x-com-bubblebrain-status-2045358053831172358-by-bubblebrain-https.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case1/output.jpg" alt="/poster demo — Boston Spring City Poster" width="280"/></a></td>
   </tr>
   <tr>
-    <td>Selfie → studio headshot.<br/>4 styles ready to ship.</td>
-    <td>Photo → 5-second dance video.<br/>6 choreography presets.</td>
-    <td>Title → cinema-grade key art.<br/>8 genre presets, multilingual.</td>
+    <td align="center"><sub>Selfie → studio portrait. 5 styles built-in (corporate, creative, startup, actor, linkedin-2025).</sub></td>
+    <td align="center"><sub>Photo → 5-second video. 7 choreography presets including <code>terracotta-disco</code> 兵马俑迪斯科.</sub></td>
+    <td align="center"><sub>Title → cinema-grade key art. 8 genres, multilingual title typography.</sub></td>
   </tr>
 </table>
-
-> The GIFs above are real outputs — see `examples/` for the full set.
 
 ---
 
@@ -193,32 +196,53 @@ for the full breakdown of all underlying gateway prices.
 
 ---
 
-## Demo gallery — 1,010 executable cases from the awesome lists
+## Demo gallery — real outputs from the source awesome lists
 
-We harvested every prompt from the three source repos, deduplicated by
-content hash, normalized the frontmatter, and dropped the result in
-[`prompts/case-library/`](prompts/case-library/INDEX.md). Each case is a
-one-file markdown record you can adapt or feed directly into
-`mcp__blockrun__blockrun_image` / `_video`.
+Below are 12 cases hand-picked from the bundled case library, rendered
+with the **original demo image from the source repo**. Click any
+thumbnail to open the full case file (prompt, model, attribution).
 
-Stats:
+<table>
+  <tr>
+    <td align="center" width="25%"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case1/output.jpg" alt="Boston Spring 2026 City Poster" width="220"/><br/><sub>City Poster · poster</sub></a></td>
+    <td align="center" width="25%"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case144/output.jpg" alt="Luxury Watch Ad" width="220"/><br/><sub>Luxury Product Ad · ad-series</sub></a></td>
+    <td align="center" width="25%"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case123/output.jpg" alt="Water Signs Zodiac" width="220"/><br/><sub>Zodiac Character Series · card-deck</sub></a></td>
+    <td align="center" width="25%"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case128/output.jpg" alt="Vintage PRS Guitar Lineage" width="220"/><br/><sub>Vintage Product Lineage · poster</sub></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case16/output.jpg" alt="Soft Black Mist Idol Portrait" width="220"/><br/><sub>Editorial Portrait · headshot</sub></a></td>
+    <td align="center"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case99/output.jpg" alt="Portrait variant" width="220"/><br/><sub>Editorial Portrait · headshot</sub></a></td>
+    <td align="center"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case100/output.jpg" alt="Portrait variant" width="220"/><br/><sub>Glitch Portrait · headshot</sub></a></td>
+    <td align="center"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case101/output.jpg" alt="Anime Fantasy Travel Movie Poster" width="220"/><br/><sub>Anime Movie Poster · poster</sub></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/case1.jpg" alt="Urban Metabolism Atlas" width="220"/><br/><sub>Isometric Infographic · ui-system</sub></a></td>
+    <td align="center"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/case166.jpg" alt="十二黄金圣斗士卡牌合集" width="220"/><br/><sub>12-Card Trading Set · card-deck</sub></a></td>
+    <td align="center"><a href="prompts/case-library/GALLERY.md"><img src="https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/case235.jpg" alt="治愈系助眠指南九宫格" width="220"/><br/><sub>9-Grid Information · character-sheet</sub></a></td>
+    <td align="center"><a href="https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-1/4/result.mp4"><img src="https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-1/4/result.jpg" alt="Seedance Magnetic Bow Advertisement" width="220"/><br/><sub>Seedance Product Ad ▶ · dance/video</sub></a></td>
+  </tr>
+</table>
+
+**See the full curated gallery: [`prompts/case-library/GALLERY.md`](prompts/case-library/GALLERY.md)** — 60 hand-picked cases.
+
+### Full case library
 
 | Workflow | Cases |
 |---|---|
 | Text → image | 268 |
-| Text → video | 307 |
+| Text → video | 106 |
 | Image → image (edit) | 322 |
-| Image → video | 113 |
-| **Total** | **1,010** |
+| Image → video | 27 |
+| **Total** | **723** unique cases (96% with hero image attached) |
 
-By source repo: 309 from `awesome-gpt-image-2-prompts`, 351 from
-`awesome-gpt-image-2`, 350 from `awesome-seedance-2-guide`. See
-[`prompts/case-library/INDEX.md`](prompts/case-library/INDEX.md) for
-the full browseable catalog grouped by tag and source.
+Every case is a single markdown file with normalized frontmatter (title,
+source, credit, workflow, model, tags) plus the original demo image
+embedded. See [`prompts/case-library/INDEX.md`](prompts/case-library/INDEX.md)
+for the full browseable catalog grouped by tag and source.
 
 > v1 ships with 3 polished slash commands (`/headshot`, `/dance`,
-> `/poster`). The 1,000+ cases below are the runway for v1.1+ — each
-> tag in the index is a candidate slash command in waiting.
+> `/poster`). The 700+ cases above are the runway for v1.1+ — each tag in
+> the index is a candidate slash command in waiting.
 
 | Vibe | Source | One-line command |
 |---|---|---|

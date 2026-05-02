@@ -7,7 +7,24 @@ workflow: text2video
 model: bytedance/seedance-2.0-fast
 tags: [ui-system, ad-series]
 inputs: {"text": true}
+assets:
+  - kind: image
+    url: "https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-8/2/ref1.jpg"
+    alt: "▶ ref1"
+  - kind: video
+    url: "https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-8/2/ref1.mp4"
+    alt: "▶ ref1"
+  - kind: image
+    url: "https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-8/2/result.jpg"
+    alt: "▶ Click to Play"
+  - kind: video
+    url: "https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-8/2/result.mp4"
+    alt: "▶ Click to Play"
 ---
+
+![▶ ref1](https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-8/2/ref1.jpg)
+
+[▶️ Watch source video](https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/2-3-8/2/ref1.mp4)
 
 ## Original prompt
 
@@ -34,5 +51,5 @@ detected tags: `/ui-system (v1.1)`.
 
 Sourced from [awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide/blob/main/use-cases/en/08-video-editing.md) by EvoLinkAI.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
 bundle. Reproduced with attribution; original license applies.

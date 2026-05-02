@@ -7,7 +7,16 @@ workflow: image2video
 model: bytedance/seedance-2.0-fast
 tags: [poster, ui-system, ad-series, unbox]
 inputs: {"image": "user-supplied"}
+assets:
+  - kind: image
+    url: "https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/1/1-3/ref1.png"
+    alt: ""
+  - kind: image
+    url: "https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/1/1-3/result.jpg"
+    alt: ""
 ---
+
+![demo](https://pub-babc88c25d274cfeb8b2ae0cd0816872.r2.dev/assets/1/1-3/ref1.png)
 
 ## Original prompt
 
@@ -29,5 +38,5 @@ detected tags: `/poster`.
 
 Sourced from [awesome-seedance-2-guide](https://github.com/EvoLinkAI/awesome-seedance-2-guide/blob/main/README.md) by EvoLinkAI.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
 bundle. Reproduced with attribution; original license applies.

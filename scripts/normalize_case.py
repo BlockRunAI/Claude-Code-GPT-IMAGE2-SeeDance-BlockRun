@@ -92,9 +92,18 @@ class Case:
     tags: list[str] = field(default_factory=list)
     inputs: dict = field(default_factory=dict)
     notes: str = ""
+    assets: list[dict] = field(default_factory=list)
+    # assets[i] = {"kind": "image"|"video", "url": "<absolute raw URL>", "alt": "..."}
 
     def slug(self) -> str:
         return slugify(self.title)
+
+    def hero_image_url(self) -> str | None:
+        """Return the first image asset URL if any, else None."""
+        for a in self.assets:
+            if a.get("kind") == "image" and a.get("url"):
+                return a["url"]
+        return None
 
 
 # ---------------------------------------------------------------- parsing
@@ -189,7 +198,114 @@ def detect_model(workflow: str, fallback: str) -> str:
     return fallback or "openai/gpt-image-2"
 
 
-def extract_cases_from_markdown(text: str, repo: dict, source_url: str) -> Iterable[Case]:
+# --- asset extraction --------------------------------------------------------
+
+# Match standard markdown image: ![alt](url)
+MD_IMG_RE = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
+# Match HTML <img src="...">
+HTML_IMG_RE = re.compile(r"<img[^>]*\s+src=[\"']([^\"']+)[\"'][^>]*>", re.IGNORECASE)
+# Match the seedance pattern: [![alt](poster.jpg)](video.mp4) — the inner is image, outer is video URL
+LINKED_IMG_RE = re.compile(r"\[!\[([^\]]*)\]\(([^)\s]+)\)\]\(([^)\s]+)\)")
+# Match <video src="..."> or <a href="...mp4">
+VIDEO_HREF_RE = re.compile(r"<a[^>]*\s+href=[\"']([^\"']+\.(?:mp4|webm|mov))[\"']", re.IGNORECASE)
+
+
+IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg")
+VIDEO_EXTS = (".mp4", ".webm", ".mov", ".m4v")
+
+
+def _is_image(url: str) -> bool:
+    u = url.lower().split("?")[0].split("#")[0]
+    return u.endswith(IMAGE_EXTS)
+
+
+def _is_video(url: str) -> bool:
+    u = url.lower().split("?")[0].split("#")[0]
+    return u.endswith(VIDEO_EXTS)
+
+
+def _resolve_url(raw: str, repo: dict, source_md_rel: str) -> str | None:
+    """Convert a markdown asset reference into an absolute URL.
+
+    - Absolute http(s) URLs pass through.
+    - Relative paths get resolved as raw.githubusercontent.com URLs, anchored
+      on the directory containing the source markdown file.
+    - data: URIs and anchor-only links are dropped.
+    """
+    raw = raw.strip()
+    if not raw or raw.startswith(("#", "data:", "mailto:", "javascript:")):
+        return None
+    if raw.startswith(("http://", "https://", "//")):
+        return raw if not raw.startswith("//") else "https:" + raw
+
+    # repo URL like https://github.com/<owner>/<repo>.git
+    owner_repo = repo["url"].split("github.com/")[-1].removesuffix(".git")
+
+    # source_md_rel is the markdown file's path relative to repo root, like "docs/gallery-part-1.md"
+    md_dir = os.path.dirname(source_md_rel)
+
+    # join + normalize
+    joined = os.path.normpath(os.path.join(md_dir, raw))
+    if joined.startswith(".."):
+        return None  # escapes the repo
+    joined = joined.lstrip("./")
+    return f"https://raw.githubusercontent.com/{owner_repo}/main/{joined}"
+
+
+def extract_assets(body: str, repo: dict, source_md_rel: str) -> list[dict]:
+    """Extract image/video asset references from a case body section."""
+    assets: list[dict] = []
+    seen: set[str] = set()
+
+    def _add(kind: str, url: str | None, alt: str = ""):
+        if not url:
+            return
+        if url in seen:
+            return
+        seen.add(url)
+        assets.append({"kind": kind, "url": url, "alt": alt[:120]})
+
+    # Linked images first (the seedance [![](thumb)](video.mp4) pattern) so we
+    # capture both the poster image AND the video URL it points to.
+    for m in LINKED_IMG_RE.finditer(body):
+        alt, thumb, link = m.group(1), m.group(2), m.group(3)
+        thumb_url = _resolve_url(thumb, repo, source_md_rel)
+        link_url = _resolve_url(link, repo, source_md_rel)
+        if thumb_url and _is_image(thumb_url):
+            _add("image", thumb_url, alt)
+        if link_url:
+            if _is_video(link_url):
+                _add("video", link_url, alt)
+            elif _is_image(link_url):
+                _add("image", link_url, alt)
+
+    # Standard markdown images
+    for m in MD_IMG_RE.finditer(body):
+        alt, url = m.group(1), m.group(2)
+        u = _resolve_url(url, repo, source_md_rel)
+        if u and _is_image(u):
+            _add("image", u, alt)
+
+    # HTML <img>
+    for m in HTML_IMG_RE.finditer(body):
+        u = _resolve_url(m.group(1), repo, source_md_rel)
+        if u and _is_image(u):
+            _add("image", u, "")
+
+    # Direct <a href="*.mp4"> links
+    for m in VIDEO_HREF_RE.finditer(body):
+        u = _resolve_url(m.group(1), repo, source_md_rel)
+        if u and _is_video(u):
+            _add("video", u, "")
+
+    # Filter out shields.io / badges / status badges
+    bad_substrings = ("shields.io", "img.shields", "badge", "/badges/", "githubassets.com", "user-attachments")
+    assets = [a for a in assets if not any(s in a["url"].lower() for s in bad_substrings)]
+
+    return assets
+
+
+def extract_cases_from_markdown(text: str, repo: dict, source_url: str, source_md_rel: str) -> Iterable[Case]:
     """
     Walk the markdown headings; for each heading, capture the body until the
     next heading of equal-or-shallower depth, then look for the first prompt
@@ -231,6 +347,7 @@ def extract_cases_from_markdown(text: str, repo: dict, source_url: str) -> Itera
         workflow = detect_workflow(prompt, repo["default_workflow"])
         model = detect_model(workflow, repo["default_model"])
         tags = detect_tags(prompt, title)
+        assets = extract_assets(body, repo, source_md_rel)
 
         yield Case(
             title=title[:120],
@@ -242,6 +359,7 @@ def extract_cases_from_markdown(text: str, repo: dict, source_url: str) -> Itera
             prompt=prompt,
             tags=tags,
             inputs={"text": True} if workflow.startswith("text") else {"image": "user-supplied"},
+            assets=assets,
         )
 
 
@@ -249,25 +367,34 @@ LANG_README_RE = re.compile(r"^readme\.[a-z][a-z0-9\-]+\.md$", re.IGNORECASE)
 SKIP_NAMES = {"license.md", "contributing.md", "changelog.md", "code_of_conduct.md", "code-of-conduct.md"}
 
 
+LANG_PATH_RE = re.compile(r"/(de|es|fr|ja|ko|tr|pt|ru|zh-CN|zh-TW|zh)/", re.IGNORECASE)
+
+
 def walk_repo(repo_dir: Path, repo: dict) -> Iterable[Case]:
     """Walk *.md files in the repo and yield cases. Skip language-variant
-    READMEs (README.zh-CN.md, README.ja.md, etc.) to avoid translation
-    duplicates of the same case content."""
+    READMEs (README.zh-CN.md, README.ja.md, etc.) and language directories
+    (use-cases/ja/...) to avoid translation duplicates of the same case
+    content."""
     for md_path in sorted(repo_dir.rglob("*.md")):
         name = md_path.name.lower()
         if name in SKIP_NAMES:
             continue
-        # Drop language-variant READMEs — they duplicate the canonical English/zh case.
+        # Drop language-variant README files
         if LANG_README_RE.match(name):
             continue
         rel = md_path.relative_to(repo_dir).as_posix()
+        # Drop files inside language-specific directories like use-cases/ja/...
+        if LANG_PATH_RE.search("/" + rel):
+            # but keep the canonical English path use-cases/en/...
+            if "/en/" not in "/" + rel:
+                continue
         source_url = f"https://github.com/{repo['url'].split('github.com/')[-1].removesuffix('.git')}/blob/main/{rel}"
         try:
             text = md_path.read_text(encoding="utf-8", errors="replace")
         except Exception as e:
             print(f"  ! could not read {md_path}: {e}", file=sys.stderr)
             continue
-        yield from extract_cases_from_markdown(text, repo, source_url)
+        yield from extract_cases_from_markdown(text, repo, source_url, rel)
 
 
 # ---------------------------------------------------------------- writing
@@ -283,7 +410,11 @@ workflow: {workflow}
 model: {model}
 tags: [{tags}]
 inputs: {inputs}
+assets:
+{assets_yaml}
 ---
+
+{assets_md}
 
 ## Original prompt
 
@@ -305,9 +436,36 @@ detected tags: `{primary_command}`.
 
 Sourced from [{source_repo}]({source_url}) by {credit}.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
 bundle. Reproduced with attribution; original license applies.
 """
+
+
+def _render_assets_yaml(assets: list[dict]) -> str:
+    if not assets:
+        return "  []"
+    lines = []
+    for a in assets:
+        alt = yaml_escape(a.get("alt") or "")
+        url = a.get("url") or ""
+        kind = a.get("kind") or "image"
+        lines.append(f'  - kind: {kind}\n    url: "{url}"\n    alt: "{alt}"')
+    return "\n".join(lines)
+
+
+def _render_assets_md(assets: list[dict]) -> str:
+    """Render the first image (and any video) inline at the top of the case."""
+    if not assets:
+        return "_No source-repo demo asset attached for this case._"
+    parts = []
+    img = next((a for a in assets if a.get("kind") == "image" and a.get("url")), None)
+    vid = next((a for a in assets if a.get("kind") == "video" and a.get("url")), None)
+    if img:
+        alt = (img.get("alt") or "demo").replace("[", "(").replace("]", ")")
+        parts.append(f"![{alt}]({img['url']})")
+    if vid:
+        parts.append(f"[▶️ Watch source video]({vid['url']})")
+    return "\n\n".join(parts)
 
 
 COMMAND_BY_TAG_PRIORITY = [
@@ -348,6 +506,8 @@ def write_case(case: Case, out_dir: Path) -> Path:
         prompt=case.prompt,
         primary_command=primary_command(case.tags),
         action=action,
+        assets_yaml=_render_assets_yaml(case.assets),
+        assets_md=_render_assets_md(case.assets),
     )
 
     # avoid clobbering — append a digit suffix if the slug collides
@@ -404,6 +564,61 @@ def write_index(cases: list[Case], out_dir: Path) -> Path:
             lines.append(f"- [{c.title}](from-{repo}/{slug}.md) — {c.workflow} · {c.model} {tags}")
 
     target = out_dir / "INDEX.md"
+    target.write_text("\n".join(lines), encoding="utf-8")
+    return target
+
+
+def write_gallery(cases: list[Case], out_dir: Path, top_n: int = 60) -> Path | None:
+    """Write a 4-column markdown gallery of the strongest cases that have hero images.
+    Used by README.md to show real demo outputs without bloating the repo with binaries."""
+    # Score: cases with assets and at least one tag rank higher; prefer
+    # poster/headshot/character-sheet/dance buckets first, then everything else.
+    PREFERRED = ["poster", "headshot", "character-sheet", "ui-system", "ghibli", "dance", "ad-series", "card-deck", "lookbook", "anime", "kpop", "sci-fi"]
+
+    def score(c: Case) -> tuple[int, int, int]:
+        if not c.hero_image_url():
+            return (-1, 0, 0)
+        pref_hit = next((i for i, t in enumerate(PREFERRED) if t in c.tags), 999)
+        tag_count = len(c.tags)
+        prompt_len = len(c.prompt)
+        return (-pref_hit, tag_count, prompt_len)
+
+    scored = sorted([c for c in cases if c.hero_image_url()], key=score, reverse=True)
+    if not scored:
+        return None
+
+    pick = scored[:top_n]
+
+    lines: list[str] = []
+    lines.append("# Featured Demo Gallery\n")
+    lines.append(
+        f"{len(pick)} hand-picked cases out of {len(cases)} in the library, "
+        "rendered with the **original demo image from the source repo** so "
+        "you can see what each prompt actually produces. Click any thumbnail "
+        "to open the full case file (prompt, model, attribution).\n"
+    )
+    lines.append(
+        "> Demo images are served via `raw.githubusercontent.com` from the "
+        "source awesome-* repos. They are not stored in this bundle, so the "
+        "repo stays small.\n"
+    )
+
+    cols = 4
+    lines.append("\n<table>")
+    for row_start in range(0, len(pick), cols):
+        row = pick[row_start : row_start + cols]
+        lines.append("  <tr>")
+        for c in row:
+            url = c.hero_image_url()
+            href = f"from-{c.source_repo}/{c.slug()}.md"
+            title_short = c.title[:60].replace("|", "·").replace("\"", "")
+            lines.append(
+                f'    <td align="center" width="25%"><a href="{href}"><img src="{url}" width="220" alt="{title_short}"/><br/><sub>{title_short}</sub></a></td>'
+            )
+        lines.append("  </tr>")
+    lines.append("</table>\n")
+
+    target = out_dir / "GALLERY.md"
     target.write_text("\n".join(lines), encoding="utf-8")
     return target
 
@@ -495,6 +710,13 @@ def main() -> int:
     print(f"=> writing INDEX.md ({len(all_cases)} total cases)")
     index_path = write_index(all_cases, output_dir)
     print(f"   {index_path}")
+
+    cases_with_assets = sum(1 for c in all_cases if c.assets)
+    cases_with_image = sum(1 for c in all_cases if c.hero_image_url())
+    print(f"=> {cases_with_assets} cases have assets ({cases_with_image} with a hero image)")
+    gallery_path = write_gallery(all_cases, output_dir, top_n=60)
+    if gallery_path:
+        print(f"   wrote {gallery_path}")
 
     print()
     print("Done. Spot-check:")

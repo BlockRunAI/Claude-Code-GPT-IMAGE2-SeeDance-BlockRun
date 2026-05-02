@@ -7,7 +7,13 @@ workflow: image2image
 model: openai/gpt-image-2
 tags: [poster, ui-system, logo-3d, infographic, minimalist]
 inputs: {"image": "user-supplied"}
+assets:
+  - kind: image
+    url: "https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/case339.jpg"
+    alt: "Apple风格自然科普海报"
 ---
+
+![Apple风格自然科普海报](https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/case339.jpg)
 
 ## Original prompt
 
@@ -123,5 +129,5 @@ detected tags: `/poster`.
 
 Sourced from [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2/blob/main/docs/gallery-part-2.md) by freestylefly.
 This case file is part of the curated `prompts/case-library/` in the
-[cc-gpt-image2-seedance-blockrun](https://github.com/blockrunai/cc-gpt-image2-seedance-blockrun)
+[cc-gpt-image2-seedance-blockrun](https://github.com/BlockRunAI/cc-gpt-image2-seedance-blockrun)
 bundle. Reproduced with attribution; original license applies.
