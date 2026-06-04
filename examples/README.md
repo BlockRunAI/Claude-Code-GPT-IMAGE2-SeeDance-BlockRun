@@ -4,7 +4,13 @@ This directory holds the curated demo outputs that the README and
 SKILL.md files reference. Files here are the **public face** of the
 project — they should be high-quality real outputs, not mockups.
 
-## Required for v1.0 launch
+## Planned demo assets (not yet shipped)
+
+> These are the curated outputs we intend to ship; only `cover.jpg` is in the
+> repo today. The README gallery renders from remote raw URLs and the
+> `case-library/`, so nothing here is required for install — generate these
+> when refreshing the public demos.
+
 
 | Path | What | Sourced via |
 |---|---|---|

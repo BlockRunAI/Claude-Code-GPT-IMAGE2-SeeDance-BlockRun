@@ -3,8 +3,8 @@ name: headshot
 description: |
   Generate a studio-quality professional headshot from any selfie or portrait
   photo. One command, ~10 seconds, ~$0.12. Uses GPT Image 2 image-to-image
-  edit via the BlockRun MCP plugin (x402 USDC on Base). Four built-in styles:
-  corporate, creative, startup, actor.
+  edit via the BlockRun MCP plugin (x402 USDC on Base). Five styles: corporate,
+  creative, startup, actor, linkedin-2025 (--all renders the four core styles).
 triggers:
   - "professional headshot"
   - "linkedin photo"

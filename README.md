@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Run any awesome-gpt-image-2 or Seedance prompt as a one-line Claude Code command.</b><br/>
-  <code>/headshot</code> · <code>/dance</code> · <code>/poster</code> · 848 cases · pay-per-image USDC on Base via <a href="https://blockrun.ai">BlockRun</a>
+  <code>/headshot</code> · <code>/dance</code> · <code>/poster</code> · <code>/launch-film</code> · 848 cases · pay-per-image USDC on Base via <a href="https://blockrun.ai">BlockRun</a>
 </p>
 
 <p align="center">
@@ -90,7 +90,7 @@ This bundle turns them into **executable Claude Code commands**:
   `/dance`, `/poster`.
 - **What it does:** thin, polished slash commands that pick the right
   model, build a vetted prompt template, call the right MCP tool, and
-  drop a file in your project directory. Three commands at v1, more coming.
+  drop a file in your project directory. Four commands at v1, more coming.
 - **Underneath:** the [BlockRun gateway](https://blockrun.ai) routes to
   OpenAI, ByteDance, xAI, Google, and Z.ai — pay per call in Base USDC
   via x402. No API keys, no subscriptions, no minimums.
@@ -198,6 +198,40 @@ Skill: [`skills/poster/SKILL.md`](skills/poster/SKILL.md)
 
 ---
 
+### `/launch-film` — direct + finish a cinematic product launch video
+
+```
+/launch-film "Franklin Agent — agents that can pay. Product Hunt launch, ~50s."
+/launch-film "DevTool X launch" --aspect 9:16 --intensity strong
+```
+
+A 30–60s hero launch film, authored as a deterministic [HyperFrames](https://hyperframes.heygen.com)
+HTML composition and finished like film. It closes the two gaps that make
+self-made launch videos look amateur: **dead scenes** (it gives every scene a
+continuous push-in/drift so nothing holds still) and **flat finish** (a one-pass
+warm grade + fine film grain + gentle vignette). This is the exact pipeline
+behind the Franklin Agent launch film — 1080p/30, 54.6s, **28 MB**, upload-ready.
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="skills/launch-film/examples/01-front-pushin-early.jpg" alt="launch-film — hook scene at t≈1.8s, portrait faint" width="380"/><br/><i>t≈1.8s — push-in begins</i></td>
+    <td align="center" width="50%"><img src="skills/launch-film/examples/02-front-pushin-late.jpg" alt="launch-film — same scene at t≈6.4s, portrait scaled up + ink underline drawn" width="380"/><br/><i>t≈6.4s — same scene, never static</i></td>
+  </tr>
+</table>
+
+The finish pass ships as a standalone tool — point it at **any** render
+(including a Seedance clip from `/dance`) to give it the same grade:
+
+```
+./skills/launch-film/finish.sh raw-render.mp4 final.mp4
+INTENSITY=subtle GRAIN=0 ./skills/launch-film/finish.sh screen-capture.mp4
+```
+
+Skill: [`skills/launch-film/SKILL.md`](skills/launch-film/SKILL.md) ·
+Tool: [`skills/launch-film/finish.sh`](skills/launch-film/finish.sh)
+
+---
+
 ## Cost transparency
 
 | Command | Cost | Wall time |
@@ -207,6 +241,7 @@ Skill: [`skills/poster/SKILL.md`](skills/poster/SKILL.md)
 | `/dance` (5 s, default) | ~$0.75 | 60–180 s |
 | `/dance` (10 s, max) | ~$1.50 | 100–240 s |
 | `/poster` (any aspect) | ~$0.12 | ~15 s |
+| `/launch-film` (local authoring + finish) | **free** | minutes |
 
 **No subscription. No charge if a call times out or fails.** Settled on
 Base mainnet USDC via x402. The wallet's private key never leaves
