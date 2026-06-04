@@ -15,12 +15,13 @@ What `install.sh` does (you can read it [here](install.sh) before running):
 1. **Registers the BlockRun MCP server** with Claude Code:
    `claude mcp add blockrun -s user -- npx -y @blockrun/mcp@latest`
 2. **Clones the bundle** to `~/.claude/blockrun-art-bundle/`
-3. **Symlinks** the three skills into `~/.claude/skills/`:
-   - `~/.claude/skills/headshot` → `…/blockrun-art-bundle/skills/headshot`
-   - `~/.claude/skills/dance`    → `…/blockrun-art-bundle/skills/dance`
-   - `~/.claude/skills/poster`   → `…/blockrun-art-bundle/skills/poster`
+3. **Symlinks** the four skills into `~/.claude/skills/`:
+   - `~/.claude/skills/headshot`    → `…/blockrun-art-bundle/skills/headshot`
+   - `~/.claude/skills/dance`       → `…/blockrun-art-bundle/skills/dance`
+   - `~/.claude/skills/poster`      → `…/blockrun-art-bundle/skills/poster`
+   - `~/.claude/skills/launch-film` → `…/blockrun-art-bundle/skills/launch-film`
 
-This last step is what makes `/headshot`, `/dance`, and `/poster` show up
+This last step is what makes `/headshot`, `/dance`, `/poster`, and `/launch-film` show up
 as **bare slash commands** in Claude Code (not `/<plugin>:<skill>` —
 just the short names).
 
@@ -42,9 +43,10 @@ git clone https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun
   ~/.claude/blockrun-art-bundle
 
 mkdir -p ~/.claude/skills
-ln -sf ~/.claude/blockrun-art-bundle/skills/headshot ~/.claude/skills/headshot
-ln -sf ~/.claude/blockrun-art-bundle/skills/dance    ~/.claude/skills/dance
-ln -sf ~/.claude/blockrun-art-bundle/skills/poster   ~/.claude/skills/poster
+ln -sf ~/.claude/blockrun-art-bundle/skills/headshot    ~/.claude/skills/headshot
+ln -sf ~/.claude/blockrun-art-bundle/skills/dance       ~/.claude/skills/dance
+ln -sf ~/.claude/blockrun-art-bundle/skills/poster      ~/.claude/skills/poster
+ln -sf ~/.claude/blockrun-art-bundle/skills/launch-film ~/.claude/skills/launch-film
 ```
 
 ---
@@ -68,7 +70,7 @@ In Claude Code:
 > /help
 ```
 
-You should see `headshot`, `dance`, and `poster` listed under
+You should see `headshot`, `dance`, `poster`, and `launch-film` listed under
 user-invocable skills.
 
 ### 3. Fund your BlockRun wallet (Base USDC)
@@ -132,7 +134,7 @@ The skill path gives the cleanest UX — `/headshot` instead of
 `/Claude Code-GPT-IMAGE2-SeeDance-BlockRun:headshot`. The bundle directory
 (`~/.claude/blockrun-art-bundle/`) holds the shared resources
 (`prompts/`, `scripts/`, `docs/`, the case library); the symlinks
-expose only the three skills to CC.
+expose only the four skills to CC.
 
 ---
 

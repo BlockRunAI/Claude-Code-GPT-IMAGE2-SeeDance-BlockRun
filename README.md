@@ -23,7 +23,7 @@ This one **runs them for you** — directly from Claude Code, with output
 that drops into your project folder, billed by the call (no subscription).
 
 ```bash
-# One-line install (registers MCP + clones bundle + symlinks /headshot, /dance, /poster)
+# One-line install (registers MCP + clones bundle + symlinks /headshot, /dance, /poster, /launch-film)
 curl -fsSL https://raw.githubusercontent.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun/main/install.sh | bash
 ```
 
@@ -219,16 +219,20 @@ behind the Franklin Agent launch film — 1080p/30, 54.6s, **28 MB**, upload-rea
   </tr>
 </table>
 
-The finish pass ships as a standalone tool — point it at **any** render
-(including a Seedance clip from `/dance`) to give it the same grade:
+Ships as **render-tested starters** (16:9 and 9:16) plus two standalone tools:
 
-```
-./skills/launch-film/finish.sh raw-render.mp4 final.mp4
-INTENSITY=subtle GRAIN=0 ./skills/launch-film/finish.sh screen-capture.mp4
+```bash
+# finish.sh — grade any render (incl. a /dance clip). Named looks + precise sizing + loudness.
+LOOK=warm-doc ./skills/launch-film/finish.sh raw-render.mp4 final.mp4       # or cool-tech | noir
+PRECISE=1 TARGET_MB=8 NORMALIZE_AUDIO=1 ./skills/launch-film/finish.sh raw.mp4 final.mp4
+
+# sound-design.sh — synthesize + mix whoosh/tick/sub/riser at your cut timestamps (pure ffmpeg)
+./skills/launch-film/sound-design.sh final.mp4 final-sfx.mp4 6.3:whoosh 12.9:tick 17.8:riser 19:sub
 ```
 
 Skill: [`skills/launch-film/SKILL.md`](skills/launch-film/SKILL.md) ·
-Tool: [`skills/launch-film/finish.sh`](skills/launch-film/finish.sh)
+Tools: [`finish.sh`](skills/launch-film/finish.sh) · [`sound-design.sh`](skills/launch-film/sound-design.sh) ·
+Starters: [`starter/`](skills/launch-film/starter/) (16:9) · [`starter-vertical/`](skills/launch-film/starter-vertical/) (9:16)
 
 ---
 
@@ -382,9 +386,9 @@ source, credit, workflow, model, tags) plus the original demo image
 embedded. See [`prompts/case-library/INDEX.md`](prompts/case-library/INDEX.md)
 for the full browseable catalog grouped by tag and source.
 
-> v1 ships with 3 polished slash commands (`/headshot`, `/dance`,
-> `/poster`). The 800+ cases above are the runway for v1.1+ — each tag in
-> the index is a candidate slash command in waiting.
+> v0.2 ships 4 polished slash commands (`/headshot`, `/dance`, `/poster`,
+> `/launch-film`). The 800+ cases above are the runway for what's next — each
+> tag in the index is a candidate slash command in waiting.
 
 | Vibe | Source | One-line command |
 |---|---|---|
@@ -422,7 +426,7 @@ for the full browseable catalog grouped by tag and source.
 
 | Version | Commands |
 |---|---|
-| **v1.0** (this release) | `/headshot`, `/dance`, `/poster` |
+| **v0.2** (current) | `/headshot`, `/dance`, `/poster`, `/launch-film` |
 | v1.1 | `/character-sheet`, `/ui-system`, `/ghibli` |
 | v1.2 | `/lookbook`, `/ad-series`, `/card-deck`, `/unbox` |
 | v2.0 | `/blockrun-art generate "<free description>"` smart router; full case-library executable as discoverable subcommands |

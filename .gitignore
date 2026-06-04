@@ -30,4 +30,10 @@ yarn.lock
 
 # Generated demo binaries — keep curated examples/ but ignore raw scratch
 examples/_scratch/
+examples/_inputs/
 examples/**/*.tmp.*
+
+# launch-film starters are templates — never commit their local renders/deps
+skills/launch-film/starter*/renders/
+skills/launch-film/starter*/node_modules/
+skills/launch-film/starter*/.hyperframes/

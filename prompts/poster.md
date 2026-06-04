@@ -82,7 +82,7 @@ intentional negative space.
 {title_position}: top, slightly diagonal
 ```
 
-### `documentary` (founder-story / true-events vibe — Your Majesty's "创业纪录片")
+### `documentary` (founder-story / true-events vibe — e.g. a startup docu-poster)
 
 ```
 {mood}: earnest, observational, fly-on-the-wall yet aspirational
