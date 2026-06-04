@@ -1,7 +1,7 @@
 {
   "name": "cc-gpt-image2-seedance-blockrun",
-  "version": "0.1.0",
-  "description": "Run any awesome-gpt-image-2 or Seedance prompt as a Claude Code command. Pay per image with x402 USDC on Base via BlockRun.ai. Three viral one-command workflows: /headshot, /dance, /poster.",
+  "version": "0.2.0",
+  "description": "Run any awesome-gpt-image-2 or Seedance prompt as a Claude Code command. Pay per image with x402 USDC on Base via BlockRun.ai. Four one-command workflows: /headshot, /dance, /poster, and /launch-film (direct + finish a cinematic product launch video).",
   "author": "BlockRun.ai",
   "homepage": "https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun",
   "license": "MIT",
@@ -21,6 +21,11 @@
     "headshot-generator",
     "movie-poster",
     "dance-video",
+    "launch-video",
+    "product-hunt",
+    "film-grain",
+    "color-grade",
+    "hyperframes",
     "viral-prompts",
     "awesome-gpt-image-2",
     "awesome-seedance",
@@ -48,6 +53,11 @@
       "id": "poster",
       "path": "skills/poster/SKILL.md",
       "description": "Cinema-grade movie or event poster via gpt-image-2 with multilingual typography."
+    },
+    {
+      "id": "launch-film",
+      "path": "skills/launch-film/SKILL.md",
+      "description": "Direct and finish a cinematic 30–60s product launch film: HyperFrames composition, no-dead-scene pacing, and a one-pass warm grade + film grain + vignette finish sized for upload."
     }
   ],
   "outputDirectory": {

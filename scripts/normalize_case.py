@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-normalize_case.py — Build-time tool that clones the three source awesome
+normalize_case.py — Build-time tool that clones the five source awesome
 repos, walks their markdown trees, and writes one normalized case file per
 prompt to `prompts/case-library/from-{repo-slug}/{slug}.md`.
 
@@ -16,6 +16,8 @@ Output:
     - prompts/case-library/from-awesome-gpt-image-2-prompts/*.md
     - prompts/case-library/from-awesome-gpt-image-2/*.md
     - prompts/case-library/from-awesome-seedance-2-guide/*.md
+    - prompts/case-library/from-awesome-seedance/*.md
+    - prompts/case-library/from-awesome-seedance-2-prompts/*.md
     - prompts/case-library/INDEX.md
 """
 

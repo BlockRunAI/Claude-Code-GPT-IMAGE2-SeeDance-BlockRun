@@ -3,9 +3,9 @@ name: dance
 description: |
   Turn any photo into a 5-second dance video. Image-to-video via Seedance 2.0
   Fast through the BlockRun MCP plugin (x402 USDC on Base). One command,
-  60–180 seconds wall time, ~$0.75 per clip. Six built-in choreography
-  styles: hiphop, ballet, contemporary, kpop, terracotta-disco (兵马俑迪斯科),
-  tiktok-trend, plus freestyle-from-music.
+  60–180 seconds wall time, ~$0.75 per clip. Seven presets: six choreographies
+  (hiphop, ballet, contemporary, kpop, terracotta-disco / 兵马俑迪斯科,
+  tiktok-trend) plus freestyle-from-music.
 triggers:
   - "dance video"
   - "make me dance"

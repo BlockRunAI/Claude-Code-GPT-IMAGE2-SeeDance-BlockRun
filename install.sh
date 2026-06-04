@@ -16,7 +16,7 @@ set -euo pipefail
 REPO_URL="https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun"
 BUNDLE_DIR="${HOME}/.claude/blockrun-art-bundle"
 SKILLS_DIR="${HOME}/.claude/skills"
-SKILLS=(headshot dance poster)
+SKILLS=(headshot dance poster launch-film)
 
 # Color helpers — fall back to plain when not a TTY.
 if [ -t 1 ]; then
@@ -50,7 +50,7 @@ mkdir -p "$(dirname "$BUNDLE_DIR")"
 
 say "==> Step 1/3: registering BlockRun MCP server with Claude Code"
 
-if claude mcp list 2>/dev/null | grep -qE '^blockrun:'; then
+if claude mcp list 2>/dev/null | grep -qiE '(^|[[:space:]])blockrun([: ]|$)'; then
     ok "BlockRun MCP already registered (skipping claude mcp add)"
 else
     if claude mcp add blockrun -s user -- npx -y "@blockrun/mcp@latest" >/dev/null 2>&1; then
@@ -67,7 +67,7 @@ say "==> Step 2/3: installing bundle into $BUNDLE_DIR"
 
 if [ -d "$BUNDLE_DIR/.git" ]; then
     ok "bundle exists, pulling latest"
-    git -C "$BUNDLE_DIR" pull --ff-only --quiet
+    git -C "$BUNDLE_DIR" pull --ff-only --quiet || warn "pull failed (dirty or diverged checkout) — using the existing bundle as-is"
 elif [ -e "$BUNDLE_DIR" ]; then
     die "$BUNDLE_DIR exists but is not a git checkout — please move or remove it and re-run."
 else

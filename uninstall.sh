@@ -8,7 +8,7 @@ set -euo pipefail
 
 BUNDLE_DIR="${HOME}/.claude/blockrun-art-bundle"
 SKILLS_DIR="${HOME}/.claude/skills"
-SKILLS=(headshot dance poster)
+SKILLS=(headshot dance poster launch-film)
 
 if [ -t 1 ]; then
     BOLD=$'\033[1m'; GREEN=$'\033[32m'; YELLOW=$'\033[33m'; RESET=$'\033[0m'
@@ -46,7 +46,7 @@ elif [ -e "$BUNDLE_DIR" ]; then
 fi
 
 # MCP server: ask before removing — user may want to keep it for other tools.
-if command -v claude >/dev/null && claude mcp list 2>/dev/null | grep -qE '^blockrun:'; then
+if command -v claude >/dev/null && claude mcp list 2>/dev/null | grep -qiE '(^|[[:space:]])blockrun([: ]|$)'; then
     say ""
     say "Found BlockRun MCP server registered with Claude Code."
     read -r -p "Remove the 'blockrun' MCP server registration too? [y/N] " ans || ans=""

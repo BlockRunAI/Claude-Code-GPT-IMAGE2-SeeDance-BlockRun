@@ -146,7 +146,7 @@ intentional negative space.
 {composition}: bold typographic-led layout; subject (speaker portrait or
               product render) anchored to one third
 {lighting}: studio flat-lit subject, contrasting graphic background
-{palette}: brand-driven — derive from `--accent-color` or default to
+{palette}: brand-driven — derive from `--accent_color` or default to
            deep indigo + electric mint
 {font_style}: contemporary geometric sans (Inter / Söhne) with a tight
               display headline; consistent grid
@@ -205,6 +205,6 @@ illustrated brush strokes unless the genre is animation. Reference: think
 ```bash
 /poster "Last Light" --genre thriller
 /poster "Founders" --genre documentary --tagline "they bet everything"
-/poster "BlockRun Live" --genre event --accent-color "#0066ff" --portrait
+/poster "BlockRun Live" --genre event --accent_color "#0066ff" --portrait
 /poster "兵马俑：复活" --genre sci-fi  # CJK title — gpt-image-2 handles it
 ```
