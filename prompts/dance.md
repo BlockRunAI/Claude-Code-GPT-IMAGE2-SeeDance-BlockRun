@@ -83,7 +83,7 @@ template's variables.
 {lighting}: stage spots, strobing accent lights, lens flares on hits
 ```
 
-### `terracotta-disco` (兵马俑迪斯科 — viral meme combo, Your Majesty's request)
+### `terracotta-disco` (兵马俑迪斯科 — viral meme combo)
 
 ```
 {style}: Tang Dynasty terracotta warrior comes alive and dances disco —

@@ -1,6 +1,6 @@
 {
   "name": "cc-gpt-image2-seedance-blockrun",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Run any awesome-gpt-image-2 or Seedance prompt as a Claude Code command. Pay per image with x402 USDC on Base via BlockRun.ai. Four one-command workflows: /headshot, /dance, /poster, and /launch-film (direct + finish a cinematic product launch video).",
   "author": "BlockRun.ai",
   "homepage": "https://github.com/BlockRunAI/Claude-Code-GPT-IMAGE2-SeeDance-BlockRun",

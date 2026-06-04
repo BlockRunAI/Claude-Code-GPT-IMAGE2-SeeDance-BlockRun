@@ -99,9 +99,9 @@ For a 5-second clip:
 - 2.0 = $1.50
 - xAI = $0.40
 
-`2.0-fast` is the price/quality knee. Override with
-`/dance --model bytedance/seedance-2.0` when you want reference-class
-output and you're OK paying 2x.
+`2.0-fast` is the price/quality knee, and is what `/dance` uses today. A
+`--model bytedance/seedance-2.0` override (reference-class, ~2× cost) is on the
+roadmap — not yet wired into the skill.
 
 ### Motion description
 

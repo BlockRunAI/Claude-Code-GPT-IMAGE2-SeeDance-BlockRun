@@ -10,10 +10,11 @@ billed.
 
 ---
 
-## Per-command costs (v1 launch)
+## Per-command costs (v0.2)
 
 | Command | Model | Typical params | Cost per run | Wall time |
 |---|---|---|---|---|
+| `/launch-film` | none (local HyperFrames + ffmpeg) | author → render → finish | **free** | minutes |
 | `/headshot` | `openai/gpt-image-2` HD | 1024×1024, single style | **~$0.12** | ~10 s |
 | `/headshot --all` | `openai/gpt-image-2` HD | 4 styles | **~$0.48** | ~40 s |
 | `/dance` (default 5s) | `bytedance/seedance-2.0-fast` | 5 sec image-to-video | **~$0.75** | 60–180 s |

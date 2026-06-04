@@ -56,6 +56,7 @@ exactly those:
 | `aspect` | no | `16:9` | `16:9` for Product Hunt / landing; `9:16` for Shorts/Reels/TikTok. |
 | `duration` | no | `~50s` | 30–60s is the launch-film sweet spot. |
 | `intensity` | no | `normal` | Finish strength: `subtle`, `normal`, `strong`. |
+| `look` | no | `warm-doc` | Named grade: `warm-doc` (parchment documentary), `cool-tech`, `noir`. |
 | `target_mb` | no | `50` | Upload ceiling; the finish auto-steps quality down once to fit. |
 
 ## Prerequisites (self-contained — no other skills required)
@@ -81,6 +82,9 @@ npm run render         # → renders/<name>.mp4  (1080p/30, ~24s placeholder fil
 SRC=$(ls -t renders/*.mp4 | head -1)
 ../skills/launch-film/finish.sh "$SRC" final.mp4   # cinematic finish
 ```
+
+For **9:16** (Shorts / Reels / TikTok), copy `starter-vertical/*` instead —
+same scenes, 1080×1920, also render-tested clean.
 
 Then rewrite the four scenes' copy/visuals for your product, keeping the motion
 structure. The starter already demonstrates every technique below: push-in,
@@ -167,10 +171,22 @@ in **one pass from the source**:
 
 ```bash
 SRC=$(ls -t renders/*_*.mp4 | head -1)
-INTENSITY=normal TARGET_MB=50 ./finish.sh "$SRC" renders/<name>-final.mp4
+LOOK=warm-doc INTENSITY=normal TARGET_MB=50 ./finish.sh "$SRC" renders/<name>-final.mp4
 ```
 
-What it applies (warm filmic grade → fine grain → gentle vignette):
+`finish.sh` env knobs (all optional, all backward-compatible):
+
+| Var | Values | Default | Effect |
+|---|---|---|---|
+| `LOOK` | `warm-doc`,`cool-tech`,`noir` | `warm-doc` | color grade character |
+| `INTENSITY` | `subtle`,`normal`,`strong` | `normal` | grade + grain strength |
+| `TARGET_MB` | int | `50` | upload ceiling (auto step-down) |
+| `PRECISE` | `1` | off | 2-pass to hit `TARGET_MB` exactly |
+| `NORMALIZE_AUDIO` | `1` | off | loudnorm to −14 LUFS (platform standard) |
+| `GRAIN`/`VIGNETTE` | `0` | on | disable a layer |
+| `VERIFY` | `0` | on | motion self-check on the result |
+
+What `warm-doc/normal` applies (filmic grade → fine grain → gentle vignette):
 
 ```
 -vf "eq=contrast=1.05:saturation=1.06:gamma=0.98,\
@@ -202,6 +218,22 @@ open "$OUT"
 Confirm: front frames differ (push-in is moving), size is under `target_mb`,
 audio plays. Report path + size + duration.
 
+### Step 6 (optional) — Sound design: the last 10% you hear but can't see
+
+Reference launch films are half *heard*. `sound-design.sh` synthesizes the four
+workhorse hits with pure ffmpeg (no asset files) and mixes them onto the film at
+your cut/beat timestamps — works whether the film already has a music bed or is
+silent:
+
+```bash
+# T:TYPE  —  whoosh (transition) · tick (reveal) · sub (impact) · riser (into CTA)
+./sound-design.sh final.mp4 final-sfx.mp4 6.3:whoosh 12.3:whoosh 12.9:tick 17.8:riser 19.0:sub
+```
+
+Place a `whoosh` on each scene crossfade, a `tick` where a word/tag lands, a
+`sub` where a number or logo hits, and a `riser` ~1.5s before the CTA. `SFX_GAIN`
+(default 0.8) sets the master level. Run this **after** the picture locks.
+
 ## Failure handling
 
 | Symptom | Fix |
@@ -217,9 +249,10 @@ audio plays. Report path + size + duration.
 
 ```bash
 /launch-film "Franklin Agent — agents that can pay. Product Hunt launch, ~50s."
-/launch-film "DevTool X launch" --aspect 9:16 --intensity strong
+/launch-film "DevTool X launch" --aspect 9:16 --look cool-tech --intensity strong
 # Finish-only: grade an existing render or a Seedance clip from /dance
-./finish.sh ./blockrun-out/<ts>-dance/dance.mp4 dance-graded.mp4
+LOOK=noir ./finish.sh ./blockrun-out/<ts>-dance/dance.mp4 dance-graded.mp4
+PRECISE=1 TARGET_MB=8 NORMALIZE_AUDIO=1 ./finish.sh raw.mp4 final.mp4
 INTENSITY=subtle GRAIN=0 ./finish.sh raw-screen-capture.mp4
 ```
 
@@ -230,9 +263,9 @@ INTENSITY=subtle GRAIN=0 ./finish.sh raw-screen-capture.mp4
   NO CREDIT CARD`), one restrained accent (gold).
 - **One idea per scene.** The screen says less than the VO.
 - **Transitions are blur-fades**, ~0.7s — soft, filmic, never hard cuts.
-- **Sound design is the last 10%** the eye can't see but the ear feels:
+- **Sound design is the last 10%** the eye can't see but the ear feels —
   transition whooshes, a tick on reveals, a sub-thud on a number landing, a
-  riser into the CTA. Add it after the picture locks.
+  riser into the CTA. Use `sound-design.sh` (Step 6) after the picture locks.
 
 ## Cost
 
