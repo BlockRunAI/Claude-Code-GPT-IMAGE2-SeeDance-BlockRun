@@ -1,0 +1,5 @@
+node_modules/
+renders/
+.hyperframes/
+*-finished.mp4
+final.mp4

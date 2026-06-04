@@ -58,13 +58,43 @@ exactly those:
 | `intensity` | no | `normal` | Finish strength: `subtle`, `normal`, `strong`. |
 | `target_mb` | no | `50` | Upload ceiling; the finish auto-steps quality down once to fit. |
 
-## Prerequisites
+## Prerequisites (self-contained — no other skills required)
 
-A HyperFrames project (`npm run render` available). If there isn't one:
-`npx hyperframes init`. The **REQUIRED companion skills** for the authoring
-mechanics — `data-*` timing attributes, `class="clip"`, `window.__timelines`
-registration, shader-safe CSS — are the project's `hyperframes` and `gsap`
-skills. This skill is the *director's layer* on top of them: pacing and finish.
+This skill bundles everything it needs. Two external tools:
+
+- **HyperFrames** — invoked on demand via `npx --yes hyperframes@<version> <cmd>`
+  (no global install). The bundled `starter/package.json` pins a known-good
+  version. Authoring reference any time: `npx hyperframes docs data-attributes`
+  / `gsap` / `compositions`.
+- **ffmpeg** — for the finish pass (`brew install ffmpeg`).
+
+You do **not** need separate `hyperframes`/`gsap` skills installed — the
+`starter/` composition below is a complete, lint-clean, render-tested worked
+example you copy and edit.
+
+## Quick start (the bundled starter renders as-is)
+
+```bash
+mkdir my-launch && cp skills/launch-film/starter/* my-launch/ && cd my-launch
+npm run check          # lint + validate + inspect — 0 errors out of the box
+npm run render         # → renders/<name>.mp4  (1080p/30, ~24s placeholder film)
+SRC=$(ls -t renders/*.mp4 | head -1)
+../skills/launch-film/finish.sh "$SRC" final.mp4   # cinematic finish
+```
+
+Then rewrite the four scenes' copy/visuals for your product, keeping the motion
+structure. The starter already demonstrates every technique below: push-in,
+drift, lean-in, ink-underline beat, blur-fade crossfades, editorial look.
+
+> **Framework gotchas the starter encodes (learned the hard way — keep them):**
+> 1. The root `data-composition-id` div MUST be the **first child of `<body>`**
+>    — a leading comment/element before it breaks root detection (lint fails
+>    `root_missing_composition_id`). Standalone files use **no `<template>`**.
+> 2. Crossfading scenes overlap in time, so adjacent scenes must use **different
+>    `data-track-index`** (alternate 1/2) — same-track clips can't overlap.
+> 3. Continuous push-in/drift nudges a full-bleed container a few px past its
+>    scene box. That's intentional motion — mark those elements
+>    `data-layout-allow-overflow` so `inspect` stays clean.
 
 ## Workflow (Claude executes in order)
 
@@ -80,10 +110,13 @@ Each scene is a `class="clip"` section with `data-start` / `data-duration` /
 `data-track-index`, transitioning via blur-fade helpers:
 
 ```js
-const tl = window.__timelines["root"];
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });   // register under your composition-id at the end
 const XB = 14, XD = 0.7;                 // transition blur px, duration
 function trIn (sel, t, d){ tl.fromTo(sel,{opacity:0,filter:`blur(${XB}px)`},{opacity:1,filter:"blur(0px)",duration:d||XD,ease:"sine.inOut"},t); }
 function trOut(sel, t, d){ tl.to    (sel,{opacity:0,filter:`blur(${XB}px)`,duration:d||XD,ease:"sine.inOut"},t); }
+// ... build scenes ...
+window.__timelines["launch"] = tl;       // key MUST equal the root data-composition-id
 ```
 
 ### Step 2 — The pacing rule: NObody holds still

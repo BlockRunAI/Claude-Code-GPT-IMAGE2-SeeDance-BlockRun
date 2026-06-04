@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>launch-film starter</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/CustomEase.min.js"></script>
+    <style>
+      /* ---- Editorial / documentary look (replace tokens with your brand) ---- */
+      :root {
+        --paper: #f4f1ea; --fg: #0a0a0a; --fg-muted: #5f5a4d; --fg-subtle: #8f8775;
+        --accent: #1b2d36; --gold: #c9a227; --gold-dim: #8c6f17;
+        --serif: "Instrument Serif", Georgia, serif;
+        --sans: "IBM Plex Sans", system-ui, sans-serif;
+        --mono: "IBM Plex Mono", ui-monospace, monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--paper); font-family: var(--sans); color: var(--fg); -webkit-font-smoothing: antialiased; }
+
+      /* class="clip" is REQUIRED on every timed scene — the framework toggles visibility on it */
+      .clip { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--paper); }
+      .scene-pad { position: absolute; inset: 0; padding: 130px 150px; display: flex; flex-direction: column; justify-content: center; }
+      .scene-pad.center { align-items: center; text-align: center; }
+
+      .eyebrow { font-family: var(--mono); font-size: 23px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--fg-muted); }
+      .display { font-family: var(--serif); font-weight: 400; line-height: 1.04; letter-spacing: -0.015em; color: var(--fg); }
+      .display .muted { color: var(--fg-subtle); }
+      .sub { font-family: var(--mono); color: #6b6453; letter-spacing: 0.04em; }
+      .ink { height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-dim)); transform: scaleX(0); transform-origin: left center; }
+
+      /* faint hero wm — stands in for a portrait / product shot you push in on (no asset needed) */
+      .wm { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); font-family: var(--serif); font-size: 760px; line-height: 0.8; color: var(--accent); opacity: 0; pointer-events: none; }
+
+      #s1 .eyebrow { margin-bottom: 26px; }
+      #s1 .display { font-size: 96px; }
+      #s1-ink { width: 420px; margin-top: 22px; }
+      #s1-sub { margin-top: 34px; font-size: 25px; }
+
+      #s2 .display { font-size: 104px; max-width: 1360px; }
+      #s2-sub { margin-top: 30px; font-size: 26px; }
+
+      #s3 .eyebrow { margin-bottom: 30px; }
+      #s3 .display { font-size: 168px; }
+      #s3-tag { margin-top: 28px; display: inline-block; padding: 10px 22px; border-radius: 999px; font-family: var(--mono); font-size: 22px; letter-spacing: 0.18em; text-transform: uppercase; color: #5f4a0d; background: rgba(201,162,39,0); }
+
+      #s4 .display { font-size: 120px; }
+      #s4-ink { width: 0; margin: 30px auto 0; }
+      #s4-sub { margin-top: 32px; font-size: 26px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="launch" data-start="0" data-duration="24.0" data-width="1920" data-height="1080">
+      <!-- Root div (with data-composition-id) MUST be the first child of <body> — a leading comment or
+           element before it breaks the linter's root-composition detection. NO <template> wrapper here. -->
+
+      <!-- S1 — HOOK (track 1) -->
+      <div id="s1" class="clip" data-start="0" data-duration="7.0" data-track-index="1">
+        <div class="wm" id="s1-wm">01</div>
+        <div class="scene-pad" id="s1-pad" data-layout-allow-overflow>
+          <div class="eyebrow">Pay-as-you-go · no credit card</div>
+          <div class="display">Most teams can <span class="muted">build.</span><br />They can't <span class="muted">ship fast.</span></div>
+          <div class="ink" id="s1-ink"></div>
+          <div class="sub" id="s1-sub">A different workflow changes that.</div>
+        </div>
+      </div>
+
+      <!-- S2 — PROBLEM (track 2) -->
+      <div id="s2" class="clip" data-start="6.3" data-duration="6.7" data-track-index="2">
+        <div class="scene-pad" id="s2-pad" data-layout-allow-overflow>
+          <div class="eyebrow" style="margin-bottom:24px;">The problem</div>
+          <div class="display">Every launch stalls in the <span class="muted">last mile.</span></div>
+          <div class="sub" id="s2-sub">Polish is where most videos quietly die.</div>
+        </div>
+      </div>
+
+      <!-- S3 — REVEAL (track 1) -->
+      <div id="s3" class="clip" data-start="12.3" data-duration="6.2" data-track-index="1">
+        <div class="scene-pad center" id="s3-pad">
+          <div class="eyebrow">Introducing</div>
+          <div class="display" id="s3-word">YOUR&nbsp;PRODUCT</div>
+          <div id="s3-tag">Now in public beta</div>
+        </div>
+      </div>
+
+      <!-- S4 — CTA (track 2, final scene — may fade out) -->
+      <div id="s4" class="clip" data-start="17.8" data-duration="6.2" data-track-index="2">
+        <div class="scene-pad center" id="s4-pad" data-layout-allow-overflow>
+          <div class="display">Start today.</div>
+          <div class="ink" id="s4-ink"></div>
+          <div class="sub" id="s4-sub">yourproduct.com</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      gsap.registerPlugin(CustomEase);
+      const brand = CustomEase.create("brand", "0.16, 1, 0.3, 1");
+      const tl = gsap.timeline({ paused: true });
+
+      // Blur-fade scene transitions (the crossfade IS the exit — overlapping in/out, no empty frame)
+      const XB = 14, XD = 0.7;
+      function trIn (sel, t, d){ tl.fromTo(sel, { opacity: 0, filter: `blur(${XB}px)` }, { opacity: 1, filter: "blur(0px)", duration: d || XD, ease: "sine.inOut" }, t); }
+      function trOut(sel, t, d){ tl.to    (sel, { opacity: 0, filter: `blur(${XB}px)`, duration: d || XD, ease: "sine.inOut" }, t); }
+
+      /* ---- S1 HOOK ---- continuous push-in on the hero wm + headline drift + ink beat ---- */
+      trIn("#s1", 0, 0.9);
+      tl.fromTo("#s1-wm", { scale: 1.0, opacity: 0 }, { scale: 1.14, opacity: 0.10, duration: 7.0, ease: "sine.inOut", transformOrigin: "60% 42%" }, 0);
+      tl.fromTo("#s1-pad", { y: 8 }, { y: -16, duration: 6.6, ease: "sine.inOut" }, 0.2);
+      tl.from("#s1 .eyebrow", { y: 24, opacity: 0, duration: 0.7, ease: "power2.out" }, 0.3);
+      tl.from("#s1 .display", { y: 46, opacity: 0, duration: 0.9, ease: brand }, 0.5);
+      tl.fromTo("#s1-ink", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, 3.0); // beat in the lull
+      tl.from("#s1-sub", { opacity: 0, duration: 0.5, ease: "power1.out" }, 3.4);
+      trOut("#s1", 6.3, 0.7);
+
+      /* ---- S2 PROBLEM ---- drift the whole pad + a reveal beat ---- */
+      trIn("#s2", 6.3, 0.7);
+      tl.fromTo("#s2-pad", { y: 10 }, { y: -12, duration: 6.2, ease: "sine.inOut" }, 6.5);
+      tl.from("#s2 .eyebrow", { y: 20, opacity: 0, duration: 0.6, ease: "power2.out" }, 6.7);
+      tl.from("#s2 .display", { y: 40, opacity: 0, duration: 0.8, ease: brand }, 6.9);
+      tl.fromTo("#s2-sub", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.9, ease: "power1.inOut" }, 8.2); // beat
+      trOut("#s2", 12.3, 0.7);
+
+      /* ---- S3 REVEAL ---- lean-in scale on the wordmark + tag highlight beat ---- */
+      trIn("#s3", 12.3, 0.7);
+      tl.fromTo("#s3-word", { scale: 0.96 }, { scale: 1.12, duration: 6.0, ease: "power1.inOut", transformOrigin: "50% 50%" }, 12.5);
+      tl.from("#s3 .eyebrow", { y: 18, opacity: 0, duration: 0.6, ease: "power2.out" }, 12.7);
+      tl.from("#s3-word", { y: 30, opacity: 0, duration: 0.8, ease: brand }, 12.9);
+      tl.fromTo("#s3-tag", { backgroundColor: "rgba(201,162,39,0)" }, { backgroundColor: "rgba(201,162,39,0.16)", duration: 0.5, ease: "sine.inOut" }, 14.4); // beat
+      trOut("#s3", 17.8, 0.7);
+
+      /* ---- S4 CTA ---- slow breathe + underline draw, final fade allowed ---- */
+      trIn("#s4", 17.8, 0.7);
+      tl.fromTo("#s4-pad", { scale: 1.0 }, { scale: 1.035, duration: 6.0, ease: "sine.inOut", transformOrigin: "50% 50%" }, 17.9);
+      tl.from("#s4 .display", { y: 36, opacity: 0, duration: 0.8, ease: brand }, 18.1);
+      tl.fromTo("#s4-ink", { width: 0 }, { width: 280, duration: 0.7, ease: "power2.inOut" }, 19.0); // beat
+      tl.from("#s4-sub", { opacity: 0, duration: 0.5, ease: "power1.out" }, 19.3);
+      tl.to("#s4-pad", { opacity: 0, duration: 0.6, ease: "sine.in" }, 23.4); // final scene only: fade out
+
+      window.__timelines["launch"] = tl;
+    </script>
+  </body>
+</html>
