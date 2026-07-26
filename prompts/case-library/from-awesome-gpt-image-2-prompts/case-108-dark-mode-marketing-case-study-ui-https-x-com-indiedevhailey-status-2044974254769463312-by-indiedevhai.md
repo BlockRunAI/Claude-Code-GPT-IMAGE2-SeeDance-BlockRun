@@ -9,11 +9,11 @@ tags: [ui-system, ad-series, card-deck, logo-3d]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case108/output.jpg"
+    url: "../../../assets/upstream/evolinkai/poster_case108.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case108/output.jpg)
+![demo](../../../assets/upstream/evolinkai/poster_case108.jpg)
 
 ## Original prompt
 

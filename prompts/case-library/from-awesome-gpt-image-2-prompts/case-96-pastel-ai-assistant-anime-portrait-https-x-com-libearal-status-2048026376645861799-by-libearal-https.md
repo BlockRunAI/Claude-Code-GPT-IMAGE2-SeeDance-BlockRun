@@ -9,11 +9,11 @@ tags: [headshot, ui-system, card-deck, anime, sci-fi]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case96/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case96.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case96/output.jpg)
+![demo](../../../assets/upstream/evolinkai/portrait_case96.jpg)
 
 ## Original prompt
 

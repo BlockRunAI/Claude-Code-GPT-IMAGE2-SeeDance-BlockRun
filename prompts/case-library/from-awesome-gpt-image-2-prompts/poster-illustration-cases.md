@@ -9,20 +9,20 @@ tags: [poster, food]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case3/output.jpg"
+    url: "../../../assets/upstream/evolinkai/poster_case3.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case79/output.jpg"
+    url: "../../../assets/upstream/evolinkai/poster_case79.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case174/output.jpg"
+    url: "../../../assets/upstream/evolinkai/poster_case174.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case175/output.jpg"
+    url: "../../../assets/upstream/evolinkai/poster_case175.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case3/output.jpg)
+![demo](../../../assets/upstream/evolinkai/poster_case3.jpg)
 
 ## Original prompt
 

@@ -9,26 +9,26 @@ tags: [headshot, poster, ui-system, ad-series, kpop]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case1/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case1.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case84/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case84.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case99/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case99.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case100/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case100.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case101/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case101.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case102/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case102.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case1/output.jpg)
+![demo](../../../assets/upstream/evolinkai/portrait_case1.jpg)
 
 ## Original prompt
 

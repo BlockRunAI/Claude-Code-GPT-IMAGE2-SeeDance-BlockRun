@@ -9,17 +9,17 @@ tags: [poster, ui-system, ad-series, unbox]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case151/output.jpg"
+    url: "../../../assets/upstream/evolinkai/poster_case151.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case160/output.jpg"
+    url: "../../../assets/upstream/evolinkai/poster_case160.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ecommerce_case163/output.jpg"
+    url: "../../../assets/upstream/evolinkai/ecommerce_case163.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case151/output.jpg)
+![demo](../../../assets/upstream/evolinkai/poster_case151.jpg)
 
 ## Original prompt
 

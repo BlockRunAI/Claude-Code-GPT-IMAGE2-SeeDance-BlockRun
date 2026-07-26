@@ -9,11 +9,11 @@ tags: [poster, ad-series, anime]
 inputs: {"image": "user-supplied"}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case71/output.jpg"
+    url: "../../../assets/upstream/evolinkai/comparison_case71.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case71/output.jpg)
+![demo](../../../assets/upstream/evolinkai/comparison_case71.jpg)
 
 ## Original prompt
 

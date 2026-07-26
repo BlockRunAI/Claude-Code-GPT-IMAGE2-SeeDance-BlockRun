@@ -9,23 +9,23 @@ tags: []
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case35/output.jpg"
+    url: "../../../assets/upstream/evolinkai/comparison_case35.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/case_case65/output.jpg"
+    url: "../../../assets/upstream/evolinkai/case_case65.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/case_case112/output.jpg"
+    url: "../../../assets/upstream/evolinkai/case_case112.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case69/output.jpg"
+    url: "../../../assets/upstream/evolinkai/comparison_case69.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case70/output.jpg"
+    url: "../../../assets/upstream/evolinkai/comparison_case70.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case35/output.jpg)
+![demo](../../../assets/upstream/evolinkai/comparison_case35.jpg)
 
 ## Original prompt
 

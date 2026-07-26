@@ -9,11 +9,11 @@ tags: [headshot, poster, ui-system, ad-series, unbox, kpop]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case3/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case3.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case3/output.jpg)
+![demo](../../../assets/upstream/evolinkai/portrait_case3.jpg)
 
 ## Original prompt
 

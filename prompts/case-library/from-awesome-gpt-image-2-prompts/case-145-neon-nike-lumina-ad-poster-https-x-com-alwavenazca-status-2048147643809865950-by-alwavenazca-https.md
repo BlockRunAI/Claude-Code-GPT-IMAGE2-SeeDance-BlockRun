@@ -9,11 +9,11 @@ tags: [poster, ui-system, lookbook, ad-series, unbox, logo-3d, sci-fi]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case145/output.jpg"
+    url: "../../../assets/upstream/evolinkai/poster_case145.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case145/output.jpg)
+![demo](../../../assets/upstream/evolinkai/poster_case145.jpg)
 
 ## Original prompt
 

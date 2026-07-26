@@ -9,11 +9,11 @@ tags: [headshot, anime]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case5/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case5.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case5/output.jpg)
+![demo](../../../assets/upstream/evolinkai/portrait_case5.jpg)
 
 ## Original prompt
 

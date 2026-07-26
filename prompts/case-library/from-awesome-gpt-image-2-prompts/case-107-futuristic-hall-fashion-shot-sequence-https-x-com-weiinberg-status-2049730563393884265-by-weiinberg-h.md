@@ -9,11 +9,11 @@ tags: [ui-system, lookbook, ad-series, sci-fi, minimalist]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case107/output.jpg"
+    url: "../../../assets/upstream/evolinkai/ui_case107.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case107/output.jpg)
+![demo](../../../assets/upstream/evolinkai/ui_case107.jpg)
 
 ## Original prompt
 

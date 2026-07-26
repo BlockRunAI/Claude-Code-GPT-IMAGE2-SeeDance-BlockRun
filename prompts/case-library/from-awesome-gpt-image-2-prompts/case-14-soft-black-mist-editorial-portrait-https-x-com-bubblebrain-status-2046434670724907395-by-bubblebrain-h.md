@@ -9,11 +9,11 @@ tags: [headshot, ui-system, lookbook, ad-series, unbox, minimalist]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case14/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case14.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case14/output.jpg)
+![demo](../../../assets/upstream/evolinkai/portrait_case14.jpg)
 
 ## Original prompt
 

@@ -9,11 +9,11 @@ tags: [ad-series]
 inputs: {"image": "user-supplied"}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case28/output.jpg"
+    url: "../../../assets/upstream/evolinkai/portrait_case28.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case28/output.jpg)
+![demo](../../../assets/upstream/evolinkai/portrait_case28.jpg)
 
 ## Original prompt
 

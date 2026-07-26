@@ -9,11 +9,11 @@ tags: [ui-system, ad-series, logo-3d, food, minimalist]
 inputs: {"image": "user-supplied"}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ecommerce_case163/output.jpg"
+    url: "../../../assets/upstream/evolinkai/ecommerce_case163.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ecommerce_case163/output.jpg)
+![demo](../../../assets/upstream/evolinkai/ecommerce_case163.jpg)
 
 ## Original prompt
 

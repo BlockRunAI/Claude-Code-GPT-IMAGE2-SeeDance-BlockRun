@@ -9,26 +9,26 @@ tags: [ui-system]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case1/output.jpg"
+    url: "../../../assets/upstream/evolinkai/ui_case1.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case38/output.jpg"
+    url: "../../../assets/upstream/evolinkai/ui_case38.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case105/output.jpg"
+    url: "../../../assets/upstream/evolinkai/ui_case105.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case106/output.jpg"
+    url: "../../../assets/upstream/evolinkai/ui_case106.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case107/output.jpg"
+    url: "../../../assets/upstream/evolinkai/ui_case107.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case109/output.jpg"
+    url: "../../../assets/upstream/evolinkai/ui_case109.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case1/output.jpg)
+![demo](../../../assets/upstream/evolinkai/ui_case1.jpg)
 
 ## Original prompt
 

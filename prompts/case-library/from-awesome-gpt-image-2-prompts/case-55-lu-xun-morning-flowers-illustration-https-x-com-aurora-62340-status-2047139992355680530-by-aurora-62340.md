@@ -9,11 +9,11 @@ tags: []
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/case_case95/output.jpg"
+    url: "../../../assets/upstream/evolinkai/case_case95.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/case_case95/output.jpg)
+![demo](../../../assets/upstream/evolinkai/case_case95.jpg)
 
 ## Original prompt
 

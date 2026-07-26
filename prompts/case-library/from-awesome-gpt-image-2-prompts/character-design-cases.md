@@ -9,17 +9,17 @@ tags: [character-sheet]
 inputs: {"text": true}
 assets:
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/character_case2/output.jpg"
+    url: "../../../assets/upstream/evolinkai/character_case2.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/character_case7/output.jpg"
+    url: "../../../assets/upstream/evolinkai/character_case7.jpg"
     alt: ""
   - kind: image
-    url: "https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/character_case11/output.jpg"
+    url: "../../../assets/upstream/evolinkai/character_case11.jpg"
     alt: ""
 ---
 
-![demo](https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/character_case2/output.jpg)
+![demo](../../../assets/upstream/evolinkai/character_case2.jpg)
 
 ## Original prompt
 
