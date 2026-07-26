@@ -67,6 +67,31 @@ That's it.
   </tr>
 </table>
 
+### Storyboard → video, end to end
+
+The demos above are sourced from the upstream awesome lists. The run below was
+produced entirely by this bundle — three GPT Image 2 storyboard frames, then the
+middle frame animated by Seedance. Every file is committed under
+[`examples/pizza-collab/`](examples/pizza-collab/); nothing was retouched.
+
+<table>
+  <tr>
+    <td align="center" width="33%"><img src="examples/pizza-collab/01-storyboard-establishing.jpg" alt="Storyboard 1 — establishing shot: CC the cat and BR the dog behind the Crust &amp; Company counter, queue out the door" width="260"/></td>
+    <td align="center" width="33%"><img src="examples/pizza-collab/02-storyboard-action.jpg" alt="Storyboard 2 — action shot: the pizza handed over as USDC coins fly into the BR terminal" width="260"/></td>
+    <td align="center" width="33%"><img src="examples/pizza-collab/03-storyboard-finale.jpg" alt="Storyboard 3 — finale: CC and BR high-five under a POWERED BY CC × BR sign, everyone eating" width="260"/></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>1 · establishing</b> — the queue</sub></td>
+    <td align="center"><sub><b>2 · action</b> — payment lands</sub></td>
+    <td align="center"><sub><b>3 · finale</b> — the high-five</sub></td>
+  </tr>
+</table>
+
+<p align="center">
+  <a href="examples/pizza-collab/seedance-action.mp4"><img src="examples/pizza-collab/seedance-action.gif" alt="Seedance animating storyboard frame 2 — 5 seconds, 24fps (click for the 720p MP4)" width="480"/></a><br/>
+  <sub>Frame 2 animated by Seedance — 5s · 24fps · 1280×720. <a href="examples/pizza-collab/seedance-action.mp4">Click for the full-quality MP4</a>.</sub>
+</p>
+
 ---
 
 ## What is this

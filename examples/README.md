@@ -4,13 +4,26 @@ This directory holds the curated demo outputs that the README and
 SKILL.md files reference. Files here are the **public face** of the
 project — they should be high-quality real outputs, not mockups.
 
+## Shipped
+
+| Path | What | Sourced via |
+|---|---|---|
+| `cover.jpg` | The 360-tile README hero mosaic | `scripts/` cover build |
+| `pizza-collab/01-storyboard-establishing.jpg` | Storyboard 1 — the queue outside Crust & Company | `/poster`-style GPT Image 2 call, 1024×1024 |
+| `pizza-collab/02-storyboard-action.jpg` | Storyboard 2 — pizza handed over, USDC into the BR terminal | same run, shot 2 |
+| `pizza-collab/03-storyboard-finale.jpg` | Storyboard 3 — CC × BR high-five | same run, shot 3 |
+| `pizza-collab/seedance-action.mp4` | Storyboard 2 animated — 5s · 24fps · 1280×720 | Seedance, seeded with frame 2 |
+| `pizza-collab/seedance-action.gif` | README-embeddable loop of the same clip | `ffmpeg` palettegen, 420px · 12fps · 2.5 MB |
+
+The `pizza-collab/` set is a single end-to-end run of this bundle — stills first,
+then one of them animated — and is the honest answer to "what does this actually
+produce?" No retouching beyond PNG→JPEG and the GIF downscale.
+
 ## Planned demo assets (not yet shipped)
 
-> These are the curated outputs we intend to ship; only `cover.jpg` is in the
-> repo today. The README gallery renders from remote raw URLs and the
-> `case-library/`, so nothing here is required for install — generate these
-> when refreshing the public demos.
-
+> The README gallery also renders from remote raw URLs and the `case-library/`,
+> so nothing below is required for install — generate these when refreshing the
+> public demos.
 
 | Path | What | Sourced via |
 |---|---|---|
